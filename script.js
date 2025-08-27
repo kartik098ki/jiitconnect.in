@@ -6,6 +6,9 @@ const modal = document.getElementById('hackathon-modal');
 const closeModal = document.querySelector('.close-modal');
 const hackathonDetail = document.getElementById('hackathon-detail');
 const notifyForm = document.getElementById('notify-form');
+const findMentorBtn = document.getElementById('find-mentor-btn');
+const comingSoonModal = document.getElementById('coming-soon-modal');
+const closeModalBtns = document.querySelectorAll('.close-modal, .close-modal-btn');
 
 // Toggle mobile menu
 hamburger.addEventListener('click', () => {
@@ -95,6 +98,7 @@ registerBtns.forEach(btn => {
         if (hackathon) {
             displayHackathonDetails(hackathon);
             modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
     });
 });
@@ -205,20 +209,34 @@ function handleHackathonRegistration(e) {
     
     // Close modal
     modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
     
     // Reset form
     e.target.reset();
 }
 
-// Close modal
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
+// Show coming soon modal for mentorship
+findMentorBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    comingSoonModal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+});
+
+// Close modals
+closeModalBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        comingSoonModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
 });
 
 // Close modal when clicking outside of it
 window.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    if (e.target === modal || e.target === comingSoonModal) {
         modal.style.display = 'none';
+        comingSoonModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
 });
 
@@ -233,7 +251,7 @@ notifyForm.addEventListener('submit', (e) => {
     
     // Show success message
     const formContainer = e.target.parentElement;
-    formContainer.innerHTML = '<p style="color: #10b981; font-weight: 500;">Thank you! We will notify you when applications open.</p>';
+    formContainer.innerHTML = '<p style="color: white; font-weight: 500; background: rgba(16, 185, 129, 0.2); padding: 15px; border-radius: 8px;">Thank you! We will notify you when applications open.</p>';
 });
 
 // Smooth scrolling for navigation links
@@ -256,7 +274,7 @@ window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.05)';
     }
 });
 
