@@ -3,620 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeFest 2023 - JiitConnect</title>
+    <title>JiitConnect - Your Gateway to Success</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .hackathon-details {
-            padding: 120px 0 80px;
-            background: #f8f9fa;
-        }
-        
-        .details-container {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
-        }
-        
-        .details-main {
-            flex: 2;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .details-image {
-            height: 300px;
-            overflow: hidden;
-        }
-        
-        .details-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .details-content {
-            padding: 30px;
-        }
-        
-        .details-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .details-title {
-            flex: 1;
-        }
-        
-        .details-title h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        
-        .details-meta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            color: #7f8c8d;
-        }
-        
-        .meta-item i {
-            margin-right: 8px;
-            color: #3498db;
-        }
-        
-        .details-status {
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        .status-open {
-            background: rgba(46, 204, 113, 0.1);
-            color: #2ecc71;
-        }
-        
-        .details-description {
-            margin-bottom: 30px;
-        }
-        
-        .details-description h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .details-description p {
-            color: #7f8c8d;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        
-        .details-timeline {
-            margin-bottom: 30px;
-        }
-        
-        .details-timeline h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 15px;
-        }
-        
-        .timeline-date {
-            flex: 0 0 120px;
-            font-weight: 600;
-            color: #3498db;
-        }
-        
-        .timeline-event {
-            flex: 1;
-            color: #7f8c8d;
-        }
-        
-        .details-prizes {
-            margin-bottom: 30px;
-        }
-        
-        .details-prizes h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        
-        .prizes-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .prize-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        
-        .prize-position {
-            flex: 0 0 80px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .prize-value {
-            flex: 1;
-            color: #7f8c8d;
-        }
-        
-        .details-sidebar {
-            flex: 1;
-        }
-        
-        .registration-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            position: sticky;
-            top: 100px;
-        }
-        
-        .registration-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        
-        .registration-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-group label {
-            font-weight: 500;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3498db;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .register-btn {
-            margin-top: 10px;
-        }
-        
-        .organizer-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .organizer-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        
-        .organizer-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .organizer-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .organizer-logo i {
-            font-size: 1.5rem;
-            color: #3498db;
-        }
-        
-        .organizer-details h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-        
-        .organizer-details p {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-        
-        .organizer-contact {
-            margin-top: 15px;
-        }
-        
-        .organizer-contact a {
-            display: flex;
-            align-items: center;
-            color: #3498db;
-            text-decoration: none;
-            margin-bottom: 10px;
-        }
-        
-        .organizer-contact i {
-            margin-right: 10px;
-        }
-        
-        .faq-section {
-            margin-top: 40px;
-        }
-        
-        .faq-section h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid #f0f0f0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            padding: 15px 20px;
-            background: #f8f9fa;
-            font-weight: 600;
-            color: #2c3e50;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-question i {
-            transition: transform 0.3s ease;
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            color: #7f8c8d;
-        }
-        
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        
-        .faq-item.active .faq-answer {
-            padding: 15px 20px;
-            max-height: 200px;
-        }
-        
-        @media (max-width: 992px) {
-            .details-container {
-                flex-direction: column;
-            }
-            
-            .details-sidebar {
-                width: 100%;
-            }
-            
-            .registration-card {
-                position: static;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
+        <div class="container">
+            <div class="nav-brand">
                 <h2>Jiit<span>Connect</span></h2>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#mentorship" class="nav-link">Mentorship</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#hackathons" class="nav-link">Hackathons</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#teams" class="nav-link">Find Teams</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#join" class="nav-link">Join Us</a>
-                </li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mentorship">Mentorship</a></li>
+                <li><a href="#hackathons">Hackathons</a></li>
+                <li><a href="#teams">Find Team</a></li>
+                <li><a href="#join">Join Us</a></li>
             </ul>
             <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hackathon Details Section -->
-    <section class="hackathon-details">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <div class="details-container">
-                <div class="details-main">
-                    <div class="details-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="CodeFest 2023">
+            <div class="hero-content">
+                <h1>Connect, Learn, and Excel</h1>
+                <p>Your gateway to mentorship, hackathons, and career opportunities</p>
+                <div class="hero-buttons">
+                    <a href="#mentorship" class="btn btn-primary">Explore Mentorship</a>
+                    <a href="#hackathons" class="btn btn-secondary">View Hackathons</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Build Your Future</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentorship Section -->
+    <section id="mentorship" class="mentorship">
+        <div class="container">
+            <div class="section-header">
+                <h2>Senior Mentorship Program</h2>
+                <p>Connect with experienced seniors who can guide you to success</p>
+            </div>
+            <div class="mentorship-grid">
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <div class="details-content">
-                        <div class="details-header">
-                            <div class="details-title">
-                                <h1>CodeFest 2023</h1>
-                                <div class="details-meta">
-                                    <div class="meta-item">
-                                        <i class="fas fa-calendar"></i>
-                                        <span>Oct 15-16, 2023</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span>24 Hours</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>Delhi</span>
-                                    </div>
-                                    <div class="meta-item">
-                                        <i class="fas fa-users"></i>
-                                        <span>500+ Participants</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="details-status status-open">
-                                Registration Open
-                            </div>
+                    <h3>Career Guidance</h3>
+                    <p>Get personalized advice on career paths and job opportunities</p>
+                </div>
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Weekly Sessions</h3>
+                    <p>Join live weekly sessions with industry experts and successful alumni</p>
+                </div>
+                <div class="mentorship-card">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Skill Development</h3>
+                    <p>Learn the skills that matter and stay ahead of the competition</p>
+                </div>
+            </div>
+            <div class="mentorship-cta">
+                <button class="btn btn-primary" id="findMentorBtn">Find Your Mentor</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathons Section -->
+    <section id="hackathons" class="hackathons">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Hackathons</h2>
+                <p>Discover and register for exciting hackathon opportunities</p>
+            </div>
+            <div class="hackathon-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="online">Online</button>
+                <button class="filter-btn" data-filter="offline">Offline</button>
+            </div>
+            <div class="hackathon-grid">
+                <div class="hackathon-card" data-category="online">
+                    <div class="hackathon-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Hackathon">
+                        <div class="hackathon-date">
+                            <span class="day">15</span>
+                            <span class="month">JUN</span>
                         </div>
-                        
-                        <div class="details-description">
-                            <h2>About CodeFest 2023</h2>
-                            <p>CodeFest 2023 is a 24-hour coding marathon that brings together developers, designers, and innovators to create amazing solutions to real-world problems. This year's theme is "Building a Sustainable Future" where participants will work on projects related to environmental sustainability, social impact, and technological innovation.</p>
-                            <p>Whether you're a beginner or an experienced coder, CodeFest offers a platform to learn, collaborate, and showcase your skills. With mentors from top tech companies, exciting workshops, and networking opportunities, this is an event you don't want to miss!</p>
+                    </div>
+                    <div class="hackathon-content">
+                        <h3>CodeFest 2023</h3>
+                        <div class="hackathon-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                            <span><i class="fas fa-trophy"></i> $10,000</span>
                         </div>
-                        
-                        <div class="details-timeline">
-                            <h2>Event Timeline</h2>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 15, 9:00 AM</div>
-                                <div class="timeline-event">Registration & Breakfast</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 15, 10:00 AM</div>
-                                <div class="timeline-event">Opening Ceremony & Theme Announcement</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 15, 11:00 AM</div>
-                                <div class="timeline-event">Team Formation & Ideation</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 15, 12:00 PM</div>
-                                <div class="timeline-event">Hacking Begins!</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 15, 7:00 PM</div>
-                                <div class="timeline-event">Dinner & Tech Talks</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 16, 9:00 AM</div>
-                                <div class="timeline-event">Breakfast & Project Finalization</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 16, 12:00 PM</div>
-                                <div class="timeline-event">Hacking Ends & Submission</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 16, 1:00 PM</div>
-                                <div class="timeline-event">Judging & Presentations</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">Oct 16, 4:00 PM</div>
-                                <div class="timeline-event">Closing Ceremony & Awards</div>
-                            </div>
-                        </div>
-                        
-                        <div class="details-prizes">
-                            <h2>Prizes</h2>
-                            <div class="prizes-list">
-                                <div class="prize-item">
-                                    <div class="prize-position">1st Place</div>
-                                    <div class="prize-value">₹50,000 + Internship Opportunities</div>
-                                </div>
-                                <div class="prize-item">
-                                    <div class="prize-position">2nd Place</div>
-                                    <div class="prize-value">₹30,000 + Goodies</div>
-                                </div>
-                                <div class="prize-item">
-                                    <div class="prize-position">3rd Place</div>
-                                    <div class="prize-value">₹20,000 + Goodies</div>
-                                </div>
-                                <div class="prize-item">
-                                    <div class="prize-position">Best Beginner Team</div>
-                                    <div class="prize-value">₹10,000 + Mentorship</div>
-                                </div>
-                                <div class="prize-item">
-                                    <div class="prize-position">Most Innovative</div>
-                                    <div class="prize-value">₹15,000 + Recognition</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="faq-section">
-                            <h2>Frequently Asked Questions</h2>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    Who can participate in CodeFest 2023?
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    CodeFest 2023 is open to all college students, recent graduates, and young professionals. Participants can join individually or in teams of 2-4 members.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    Is there a registration fee?
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    No, CodeFest 2023 is completely free to attend. We provide meals, snacks, and swag to all participants.
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    What should I bring to the event?
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    Participants should bring their laptops, chargers, and any other devices they need for development. We'll provide power strips, Wi-Fi, and workspace. Don't forget to bring a sleeping bag if you plan to stay overnight!
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    Will there be mentors available during the event?
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                                <div class="faq-answer">
-                                    Yes, we'll have mentors from various tech companies available throughout the event to help with technical challenges and provide guidance on projects.
-                                </div>
-                            </div>
-                        </div>
+                        <p>Join the biggest online coding competition of the year</p>
+                        <button class="btn btn-primary register-btn" data-id="1">Register Now</button>
                     </div>
                 </div>
-                
-                <div class="details-sidebar">
-                    <div class="registration-card">
-                        <h3>Register Now</h3>
-                        <form class="registration-form" id="registrationForm">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="college">College/University</label>
-                                <input type="text" id="college" name="college" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="experience">Experience Level</label>
-                                <select id="experience" name="experience" required>
-                                    <option value="">Select your level</option>
-                                    <option value="beginner">Beginner</option>
-                                    <option value="intermediate">Intermediate</option>
-                                    <option value="advanced">Advanced</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="team">Team Preference</label>
-                                <select id="team" name="team" required>
-                                    <option value="">Select preference</option>
-                                    <option value="individual">Individual (will be assigned to a team)</option>
-                                    <option value="team">Already have a team</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="dietary">Dietary Restrictions</label>
-                                <textarea id="dietary" name="dietary" placeholder="Please specify any dietary restrictions or allergies"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" name="terms" required> I agree to the terms and conditions
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary register-btn">Register Now</button>
-                        </form>
+                <div class="hackathon-card" data-category="offline">
+                    <div class="hackathon-image">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Hackathon">
+                        <div class="hackathon-date">
+                            <span class="day">22</span>
+                            <span class="month">JUN</span>
+                        </div>
                     </div>
-                    
-                    <div class="organizer-card">
-                        <h3>Organizer</h3>
-                        <div class="organizer-info">
-                            <div class="organizer-logo">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <div class="organizer-details">
-                                <h4>Tech Innovators Society</h4>
-                                <p>Delhi Technological University</p>
-                            </div>
+                    <div class="hackathon-content">
+                        <h3>InnovateX</h3>
+                        <div class="hackathon-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Delhi</span>
+                            <span><i class="fas fa-trophy"></i> $15,000</span>
                         </div>
-                        <div class="organizer-contact">
-                            <a href="mailto:codefest@techinnovators.com">
-                                <i class="fas fa-envelope"></i>
-                                codefest@techinnovators.com
-                            </a>
-                            <a href="tel:+911234567890">
-                                <i class="fas fa-phone"></i>
-                                +91 12345 67890
-                            </a>
+                        <p>48-hour innovation challenge with industry mentors</p>
+                        <button class="btn btn-primary register-btn" data-id="2">Register Now</button>
+                    </div>
+                </div>
+                <div class="hackathon-card" data-category="online">
+                    <div class="hackathon-image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Hackathon">
+                        <div class="hackathon-date">
+                            <span class="day">05</span>
+                            <span class="month">JUL</span>
                         </div>
+                    </div>
+                    <div class="hackathon-content">
+                        <h3>AI Challenge</h3>
+                        <div class="hackathon-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                            <span><i class="fas fa-trophy"></i> $20,000</span>
+                        </div>
+                        <p>Build innovative AI solutions for real-world problems</p>
+                        <button class="btn btn-primary register-btn" data-id="3">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="teams">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Your Team</h2>
+                <p>Connect with other students and form teams for hackathons</p>
+            </div>
+            <div class="team-filters">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for teams..." id="teamSearch">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <select id="hackathonFilter">
+                    <option value="all">All Hackathons</option>
+                    <option value="1">CodeFest 2023</option>
+                    <option value="2">InnovateX</option>
+                    <option value="3">AI Challenge</option>
+                </select>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-hackathon="1">
+                    <div class="team-header">
+                        <h3>Code Warriors</h3>
+                        <span class="team-status">Looking for members</span>
+                    </div>
+                    <div class="team-info">
+                        <p><i class="fas fa-users"></i> 2/4 members</p>
+                        <p><i class="fas fa-tag"></i> CodeFest 2023</p>
+                        <p><i class="fas fa-search"></i> Looking for: Frontend Developer, UI/UX Designer</p>
+                    </div>
+                    <div class="team-members">
+                        <div class="member">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Member">
+                            <span>Akash</span>
+                        </div>
+                        <div class="member">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Member">
+                            <span>Priya</span>
+                        </div>
+                        <div class="member-slot empty">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="member-slot empty">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary join-team-btn" data-team="1">Join Team</button>
+                </div>
+                <div class="team-card" data-hackathon="2">
+                    <div class="team-header">
+                        <h3>Innovators</h3>
+                        <span class="team-status">Looking for members</span>
+                    </div>
+                    <div class="team-info">
+                        <p><i class="fas fa-users"></i> 1/4 members</p>
+                        <p><i class="fas fa-tag"></i> InnovateX</p>
+                        <p><i class="fas fa-search"></i> Looking for: Backend Developer, Mobile Developer, Designer</p>
+                    </div>
+                    <div class="team-members">
+                        <div class="member">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Member">
+                            <span>Rahul</span>
+                        </div>
+                        <div class="member-slot empty">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="member-slot empty">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="member-slot empty">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary join-team-btn" data-team="2">Join Team</button>
+                </div>
+                <div class="team-card" data-hackathon="3">
+                    <div class="team-header">
+                        <h3>AI Pioneers</h3>
+                        <span class="team-status">Looking for members</span>
+                    </div>
+                    <div class="team-info">
+                        <p><i class="fas fa-users"></i> 3/4 members</p>
+                        <p><i class="fas fa-tag"></i> AI Challenge</p>
+                        <p><i class="fas fa-search"></i> Looking for: Data Scientist</p>
+                    </div>
+                    <div class="team-members">
+                        <div class="member">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Member">
+                            <span>Vikram</span>
+                        </div>
+                        <div class="member">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Member">
+                            <span>Ananya</span>
+                        </div>
+                        <div class="member">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Member">
+                            <span>Karan</span>
+                        </div>
+                        <div class="member-slot empty">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary join-team-btn" data-team="3">Join Team</button>
+                </div>
+            </div>
+            <div class="create-team-cta">
+                <button class="btn btn-secondary" id="createTeamBtn">Create Your Own Team</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join" class="join">
+        <div class="container">
+            <div class="join-content">
+                <div class="join-text">
+                    <h2>Join Our Team</h2>
+                    <p>We're looking for passionate individuals to help us build the future of mentorship at JiitConnect</p>
+                    <ul class="join-features">
+                        <li><i class="fas fa-check"></i> Make a real impact on campus</li>
+                        <li><i class="fas fa-check"></i> Develop leadership and organizational skills</li>
+                        <li><i class="fas fa-check"></i> Connect with industry professionals</li>
+                        <li><i class="fas fa-check"></i> Build your network and resume</li>
+                    </ul>
+                    <button class="btn btn-primary" id="joinUsBtn">Apply Now</button>
+                </div>
+                <div class="join-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+        <div class="container">
+            <div class="coming-soon-content">
+                <h2>More Features Coming Soon</h2>
+                <p>We're constantly working to bring you new and exciting features</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-video"></i>
+                        <h3>Live Sessions</h3>
+                        <p>Interactive live sessions with industry experts</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-book"></i>
+                        <h3>Resource Library</h3>
+                        <p>Curated learning materials and resources</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Event Calendar</h3>
+                        <p>Never miss important deadlines and events</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-comments"></i>
+                        <h3>Discussion Forums</h3>
+                        <p>Connect and discuss with fellow students</p>
                     </div>
                 </div>
             </div>
@@ -625,94 +323,323 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <h2>Jiit<span>Connect</span></h2>
-                <p>Connecting students to opportunities</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#mentorship">Mentorship</a></li>
-                    <li><a href="index.html#hackathons">Hackathons</a></li>
-                    <li><a href="index.html#teams">Find Teams</a></li>
-                    <li><a href="index.html#join">Join Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> contact@jiitconnect.com</li>
-                    <li><i class="fas fa-phone"></i> +91 12345 67890</li>
-                    <li><i class="fas fa-map-marker-alt"></i> JIIT, Noida</li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Jiit<span>Connect</span></h2>
+                    <p>Connecting students to opportunities</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#mentorship">Mentorship</a></li>
+                        <li><a href="#hackathons">Hackathons</a></li>
+                        <li><a href="#teams">Find Team</a></li>
+                        <li><a href="#join">Join Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contact@jiitconnect.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Jaypee Institute of Information Technology</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 JiitConnect. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 JiitConnect. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+    <!-- Hackathon Registration Modal -->
+    <div id="hackathonModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Hackathon Registration</h2>
+            </div>
+            <div class="modal-body">
+                <div class="hackathon-details">
+                    <img id="modalImage" src="" alt="Hackathon">
+                    <div class="details-content">
+                        <h3 id="modalHackathonName">Hackathon Name</h3>
+                        <div class="details-meta">
+                            <span id="modalDate"><i class="fas fa-calendar-alt"></i> Date</span>
+                            <span id="modalLocation"><i class="fas fa-map-marker-alt"></i> Location</span>
+                            <span id="modalPrize"><i class="fas fa-trophy"></i> Prize</span>
+                        </div>
+                        <p id="modalDescription">Hackathon description goes here.</p>
+                    </div>
+                </div>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills">Skills</label>
+                        <input type="text" id="skills" placeholder="e.g., Frontend, Python, UI/UX">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Experience Level</label>
+                        <select id="experience">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamPreference">Team Preference</label>
+                        <select id="teamPreference">
+                            <option value="solo">Participate Solo</option>
+                            <option value="find">Help me find a team</option>
+                            <option value="have">I already have a team</option>
+                        </select>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I agree to the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+    <!-- Join Team Modal -->
+    <div id="joinTeamModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Join Team</h2>
+            </div>
+            <div class="modal-body">
+                <div class="team-details">
+                    <h3 id="teamName">Team Name</h3>
+                    <div class="team-meta">
+                        <span id="teamHackathon"><i class="fas fa-tag"></i> Hackathon</span>
+                        <span id="teamMembers"><i class="fas fa-users"></i> Members</span>
+                    </div>
+                    <p id="teamDescription">Team description goes here.</p>
+                </div>
+                <form id="joinTeamForm">
+                    <div class="form-group">
+                        <label for="joinFullName">Full Name</label>
+                        <input type="text" id="joinFullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinEmail">Email</label>
+                        <input type="email" id="joinEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinSkills">Your Skills</label>
+                        <input type="text" id="joinSkills" placeholder="e.g., Frontend, Python, UI/UX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="joinMessage">Message to Team (Optional)</label>
+                        <textarea id="joinMessage" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }));
+    <!-- Create Team Modal -->
+    <div id="createTeamModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Create Your Team</h2>
+            </div>
+            <div class="modal-body">
+                <form id="createTeamForm">
+                    <div class="form-group">
+                        <label for="teamNameInput">Team Name</label>
+                        <input type="text" id="teamNameInput" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamHackathonSelect">Hackathon</label>
+                        <select id="teamHackathonSelect" required>
+                            <option value="">Select a hackathon</option>
+                            <option value="1">CodeFest 2023</option>
+                            <option value="2">InnovateX</option>
+                            <option value="3">AI Challenge</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamSize">Team Size</label>
+                        <select id="teamSize" required>
+                            <option value="2">2 members</option>
+                            <option value="3">3 members</option>
+                            <option value="4">4 members</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamDescriptionInput">Team Description</label>
+                        <textarea id="teamDescriptionInput" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamLookingFor">Looking for members with skills:</label>
+                        <input type="text" id="teamLookingFor" placeholder="e.g., Frontend, Python, UI/UX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderName">Your Name</label>
+                        <input type="text" id="leaderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="leaderEmail">Your Email</label>
+                        <input type="email" id="leaderEmail" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Team</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                faqItem.classList.toggle('active');
-            });
-        });
+    <!-- Join Us Modal -->
+    <div id="joinUsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Join the JiitConnect Team</h2>
+            </div>
+            <div class="modal-body">
+                <p>We're excited that you're interested in joining our team! Please fill out the form below to apply.</p>
+                <form id="joinUsForm">
+                    <div class="form-group">
+                        <label for="applicantName">Full Name</label>
+                        <input type="text" id="applicantName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantEmail">Email</label>
+                        <input type="email" id="applicantEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantPhone">Phone Number</label>
+                        <input type="tel" id="applicantPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantYear">Current Year of Study</label>
+                        <select id="applicantYear" required>
+                            <option value="">Select year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantDepartment">Department</label>
+                        <input type="text" id="applicantDepartment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantRole">Role you're interested in</label>
+                        <select id="applicantRole" required>
+                            <option value="">Select role</option>
+                            <option value="mentorship">Mentorship Coordinator</option>
+                            <option value="events">Events Manager</option>
+                            <option value="marketing">Marketing & Outreach</option>
+                            <option value="tech">Tech Team</option>
+                            <option value="design">Design Team</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantSkills">Your Skills</label>
+                        <textarea id="applicantSkills" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantMotivation">Why do you want to join JiitConnect?</label>
+                        <textarea id="applicantMotivation" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicantExperience">Relevant Experience (Optional)</label>
+                        <textarea id="applicantExperience" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        // Form submission
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            
-            // In a real application, you would send this data to a server
-            // For now, we'll just show a success message
-            alert(`Thank you, ${name}! Your registration for CodeFest 2023 has been submitted successfully. A confirmation email has been sent to ${email}.`);
-            
-            // Reset the form
-            this.reset();
-        });
+    <!-- Find Mentor Modal -->
+    <div id="findMentorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Find Your Mentor</h2>
+            </div>
+            <div class="modal-body">
+                <p>Connect with experienced seniors who can guide you in your career journey. Fill out the form below to find a mentor that matches your interests.</p>
+                <form id="findMentorForm">
+                    <div class="form-group">
+                        <label for="menteeName">Full Name</label>
+                        <input type="text" id="menteeName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="menteeEmail">Email</label>
+                        <input type="email" id="menteeEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="menteeYear">Current Year of Study</label>
+                        <select id="menteeYear" required>
+                            <option value="">Select year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="menteeDepartment">Department</label>
+                        <input type="text" id="menteeDepartment" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="menteeInterests">Areas of Interest</label>
+                        <textarea id="menteeInterests" rows="2" placeholder="e.g., Web Development, Data Science, Machine Learning, Competitive Programming" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="menteeGoals">Your Career Goals</label>
+                        <textarea id="menteeGoals" rows="3" placeholder="e.g., I want to get a job at a FAANG company, I want to start my own startup" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="mentorPreference">Mentor Preference (Optional)</label>
+                        <select id="mentorPreference">
+                            <option value="">No preference</option>
+                            <option value="alumni">Alumni working in industry</option>
+                            <option value="senior">Senior student from college</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="menteeMessage">Message for Potential Mentor (Optional)</label>
+                        <textarea id="menteeMessage" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Find Mentor</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-        // Add shadow to navbar on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
