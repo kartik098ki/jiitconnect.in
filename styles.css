@@ -229,6 +229,69 @@ section {
     z-index: -1;
 }
 
+.lighting-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    z-index: -1;
+    animation: lightingPulse 8s infinite alternate;
+}
+
+.light-beam {
+    position: absolute;
+    width: 2px;
+    height: 300px;
+    background: linear-gradient(to bottom, transparent, rgba(99, 102, 241, 0.4), transparent);
+    transform-origin: top center;
+    z-index: -1;
+    animation: beamMove 15s infinite alternate;
+}
+
+.beam-1 {
+    top: 10%;
+    left: 20%;
+    transform: rotate(25deg);
+}
+
+.beam-2 {
+    top: 30%;
+    right: 15%;
+    transform: rotate(-15deg);
+    animation-delay: 2s;
+}
+
+.beam-3 {
+    bottom: 20%;
+    left: 40%;
+    transform: rotate(45deg);
+    animation-delay: 4s;
+}
+
+@keyframes lightingPulse {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes beamMove {
+    0%, 100% {
+        opacity: 0.3;
+        height: 300px;
+    }
+    50% {
+        opacity: 0.7;
+        height: 400px;
+    }
+}
+
 .hero .container {
     display: flex;
     align-items: center;
@@ -335,7 +398,7 @@ section {
 .hero-image-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 500px;
 }
 
 .hero-image {
@@ -377,16 +440,15 @@ section {
 }
 
 .image-card.card-2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 40%;
+    right: 0;
     animation: float 6s ease-in-out infinite 2s;
     z-index: 2;
 }
 
 .image-card.card-3 {
     bottom: 0;
-    right: 0;
+    left: 30%;
     animation: float 6s ease-in-out infinite 4s;
     z-index: 1;
 }
@@ -1198,7 +1260,7 @@ section {
     }
     
     .hero-image-container {
-        height: 300px;
+        height: 400px;
     }
     
     .image-card {
@@ -1276,7 +1338,7 @@ section {
     }
     
     .hero-image-container {
-        height: 250px;
+        height: 350px;
     }
     
     .image-card {
