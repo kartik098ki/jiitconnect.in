@@ -219,7 +219,7 @@ window.addEventListener('scroll', () => {
 
 // Add animation on scroll
 const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.hackathon-card, .info-card, .feature-item, .hero-card');
+    const elements = document.querySelectorAll('.hackathon-card, .info-card, .feature-item');
     
     elements.forEach(element => {
         const elementPosition = element.getBoundingClientRect().top;
@@ -233,7 +233,7 @@ const animateOnScroll = () => {
 };
 
 // Set initial styles for animation
-document.querySelectorAll('.hackathon-card, .info-card, .feature-item, .hero-card').forEach(element => {
+document.querySelectorAll('.hackathon-card, .info-card, .feature-item').forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
     element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
