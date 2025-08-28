@@ -16,9 +16,9 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#mentorship">Mentorship</a></li>
                 <li><a href="#hackathons">Hackathons</a></li>
                 <li><a href="#teams">Find Team</a></li>
+                <li><a href="#mentorship">Mentorship</a></li>
                 <li><a href="#join">Join Us</a></li>
             </ul>
             <div class="hamburger">
@@ -36,8 +36,8 @@
                 <h1>Connect, Learn, and Excel</h1>
                 <p>Your gateway to mentorship, hackathons, and career opportunities</p>
                 <div class="hero-buttons">
-                    <a href="#mentorship" class="btn btn-primary">Explore Mentorship</a>
-                    <a href="#hackathons" class="btn btn-secondary">View Hackathons</a>
+                    <a href="#hackathons" class="btn btn-primary">View Hackathons</a>
+                    <a href="#teams" class="btn btn-secondary">Find Team</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -45,42 +45,6 @@
                     <i class="fas fa-laptop-code"></i>
                     <h3>Build Your Future</h3>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mentorship Section -->
-    <section id="mentorship" class="mentorship">
-        <div class="container">
-            <div class="section-header">
-                <h2>Senior Mentorship Program</h2>
-                <p>Connect with experienced seniors who can guide you to success</p>
-            </div>
-            <div class="mentorship-grid">
-                <div class="mentorship-card">
-                    <div class="card-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Career Guidance</h3>
-                    <p>Get personalized advice on career paths and job opportunities</p>
-                </div>
-                <div class="mentorship-card">
-                    <div class="card-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Weekly Sessions</h3>
-                    <p>Join live weekly sessions with industry experts and successful alumni</p>
-                </div>
-                <div class="mentorship-card">
-                    <div class="card-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Skill Development</h3>
-                    <p>Learn the skills that matter and stay ahead of the competition</p>
-                </div>
-            </div>
-            <div class="mentorship-cta">
-                <button class="btn btn-primary" id="findMentorBtn">Find Your Mentor</button>
             </div>
         </div>
     </section>
@@ -163,106 +127,44 @@
                 <h2>Find Your Team</h2>
                 <p>Connect with other students and form teams for hackathons</p>
             </div>
-            <div class="team-filters">
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for teams..." id="teamSearch">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-                <select id="hackathonFilter">
-                    <option value="all">All Hackathons</option>
-                    <option value="1">CodeFest 2023</option>
-                    <option value="2">InnovateX</option>
-                    <option value="3">AI Challenge</option>
-                </select>
+            <div class="team-actions">
+                <button class="btn btn-primary" id="createTeamBtn">Create Team</button>
+                <button class="btn btn-secondary" id="joinTeamBtn">Join Team</button>
             </div>
-            <div class="team-grid">
-                <div class="team-card" data-hackathon="1">
-                    <div class="team-header">
-                        <h3>Code Warriors</h3>
-                        <span class="team-status">Looking for members</span>
-                    </div>
-                    <div class="team-info">
-                        <p><i class="fas fa-users"></i> 2/4 members</p>
-                        <p><i class="fas fa-tag"></i> CodeFest 2023</p>
-                        <p><i class="fas fa-search"></i> Looking for: Frontend Developer, UI/UX Designer</p>
-                    </div>
-                    <div class="team-members">
-                        <div class="member">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Member">
-                            <span>Akash</span>
-                        </div>
-                        <div class="member">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Member">
-                            <span>Priya</span>
-                        </div>
-                        <div class="member-slot empty">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="member-slot empty">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary join-team-btn" data-team="1">Join Team</button>
+            <div class="team-info">
+                <div class="info-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaborate</h3>
+                    <p>Find like-minded students to work with on hackathons</p>
                 </div>
-                <div class="team-card" data-hackathon="2">
-                    <div class="team-header">
-                        <h3>Innovators</h3>
-                        <span class="team-status">Looking for members</span>
-                    </div>
-                    <div class="team-info">
-                        <p><i class="fas fa-users"></i> 1/4 members</p>
-                        <p><i class="fas fa-tag"></i> InnovateX</p>
-                        <p><i class="fas fa-search"></i> Looking for: Backend Developer, Mobile Developer, Designer</p>
-                    </div>
-                    <div class="team-members">
-                        <div class="member">
-                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Member">
-                            <span>Rahul</span>
-                        </div>
-                        <div class="member-slot empty">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="member-slot empty">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                        <div class="member-slot empty">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary join-team-btn" data-team="2">Join Team</button>
+                <div class="info-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovate</h3>
+                    <p>Combine skills and ideas to create amazing projects</p>
                 </div>
-                <div class="team-card" data-hackathon="3">
-                    <div class="team-header">
-                        <h3>AI Pioneers</h3>
-                        <span class="team-status">Looking for members</span>
-                    </div>
-                    <div class="team-info">
-                        <p><i class="fas fa-users"></i> 3/4 members</p>
-                        <p><i class="fas fa-tag"></i> AI Challenge</p>
-                        <p><i class="fas fa-search"></i> Looking for: Data Scientist</p>
-                    </div>
-                    <div class="team-members">
-                        <div class="member">
-                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Member">
-                            <span>Vikram</span>
-                        </div>
-                        <div class="member">
-                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Member">
-                            <span>Ananya</span>
-                        </div>
-                        <div class="member">
-                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Member">
-                            <span>Karan</span>
-                        </div>
-                        <div class="member-slot empty">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary join-team-btn" data-team="3">Join Team</button>
+                <div class="info-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Win</h3>
+                    <p>Increase your chances of winning with a strong team</p>
                 </div>
             </div>
-            <div class="create-team-cta">
-                <button class="btn btn-secondary" id="createTeamBtn">Create Your Own Team</button>
+        </div>
+    </section>
+
+    <!-- Mentorship Section -->
+    <section id="mentorship" class="mentorship">
+        <div class="container">
+            <div class="section-header">
+                <h2>Senior Mentorship Program</h2>
+                <p>Connect with experienced seniors who can guide you to success</p>
+            </div>
+            <div class="coming-soon-card">
+                <div class="coming-soon-icon">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <h3>Coming Soon</h3>
+                <p>Our Senior Mentorship Program is launching soon! Join the waitlist to be the first to know when it's available.</p>
+                <button class="btn btn-primary" id="joinWaitlistBtn">Join Waitlist</button>
             </div>
         </div>
     </section>
@@ -333,9 +235,9 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#mentorship">Mentorship</a></li>
                         <li><a href="#hackathons">Hackathons</a></li>
                         <li><a href="#teams">Find Team</a></li>
+                        <li><a href="#mentorship">Mentorship</a></li>
                         <li><a href="#join">Join Us</a></li>
                     </ul>
                 </div>
@@ -426,92 +328,43 @@
         </div>
     </div>
 
-    <!-- Join Team Modal -->
-    <div id="joinTeamModal" class="modal">
+    <!-- Join Waitlist Modal -->
+    <div id="joinWaitlistModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-                <h2>Join Team</h2>
+                <h2>Join Mentorship Waitlist</h2>
             </div>
             <div class="modal-body">
-                <div class="team-details">
-                    <h3 id="teamName">Team Name</h3>
-                    <div class="team-meta">
-                        <span id="teamHackathon"><i class="fas fa-tag"></i> Hackathon</span>
-                        <span id="teamMembers"><i class="fas fa-users"></i> Members</span>
-                    </div>
-                    <p id="teamDescription">Team description goes here.</p>
-                </div>
-                <form id="joinTeamForm">
+                <p>Be the first to know when our Senior Mentorship Program launches. Join the waitlist now!</p>
+                <form id="waitlistForm">
                     <div class="form-group">
-                        <label for="joinFullName">Full Name</label>
-                        <input type="text" id="joinFullName" required>
+                        <label for="waitlistName">Full Name</label>
+                        <input type="text" id="waitlistName" required>
                     </div>
                     <div class="form-group">
-                        <label for="joinEmail">Email</label>
-                        <input type="email" id="joinEmail" required>
+                        <label for="waitlistEmail">Email</label>
+                        <input type="email" id="waitlistEmail" required>
                     </div>
                     <div class="form-group">
-                        <label for="joinSkills">Your Skills</label>
-                        <input type="text" id="joinSkills" placeholder="e.g., Frontend, Python, UI/UX" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="joinMessage">Message to Team (Optional)</label>
-                        <textarea id="joinMessage" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Request</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Create Team Modal -->
-    <div id="createTeamModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Create Your Team</h2>
-            </div>
-            <div class="modal-body">
-                <form id="createTeamForm">
-                    <div class="form-group">
-                        <label for="teamNameInput">Team Name</label>
-                        <input type="text" id="teamNameInput" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="teamHackathonSelect">Hackathon</label>
-                        <select id="teamHackathonSelect" required>
-                            <option value="">Select a hackathon</option>
-                            <option value="1">CodeFest 2023</option>
-                            <option value="2">InnovateX</option>
-                            <option value="3">AI Challenge</option>
+                        <label for="waitlistYear">Current Year of Study</label>
+                        <select id="waitlistYear" required>
+                            <option value="">Select year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="teamSize">Team Size</label>
-                        <select id="teamSize" required>
-                            <option value="2">2 members</option>
-                            <option value="3">3 members</option>
-                            <option value="4">4 members</option>
-                        </select>
+                        <label for="waitlistDepartment">Department</label>
+                        <input type="text" id="waitlistDepartment" required>
                     </div>
                     <div class="form-group">
-                        <label for="teamDescriptionInput">Team Description</label>
-                        <textarea id="teamDescriptionInput" rows="3" required></textarea>
+                        <label for="waitlistInterests">Areas of Interest</label>
+                        <textarea id="waitlistInterests" rows="2" placeholder="e.g., Web Development, Data Science, Machine Learning" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="teamLookingFor">Looking for members with skills:</label>
-                        <input type="text" id="teamLookingFor" placeholder="e.g., Frontend, Python, UI/UX" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="leaderName">Your Name</label>
-                        <input type="text" id="leaderName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="leaderEmail">Your Email</label>
-                        <input type="email" id="leaderEmail" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create Team</button>
+                    <button type="submit" class="btn btn-primary">Join Waitlist</button>
                 </form>
             </div>
         </div>
@@ -582,59 +435,153 @@
         </div>
     </div>
 
-    <!-- Find Mentor Modal -->
-    <div id="findMentorModal" class="modal">
+    <!-- Team Page -->
+    <div id="teamPage" class="team-page">
+        <div class="container">
+            <div class="team-page-header">
+                <button class="back-btn" id="backToHomeBtn">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+                <h2>Team Management</h2>
+            </div>
+            
+            <div class="team-tabs">
+                <button class="tab-btn active" data-tab="create">Create Team</button>
+                <button class="tab-btn" data-tab="join">Join Team</button>
+                <button class="tab-btn" data-tab="browse">Browse Teams</button>
+            </div>
+            
+            <div class="tab-content">
+                <!-- Create Team Tab -->
+                <div class="tab-pane active" id="create-tab">
+                    <div class="team-form-container">
+                        <h3>Create Your Team</h3>
+                        <form id="createTeamForm">
+                            <div class="form-group">
+                                <label for="teamNameInput">Team Name</label>
+                                <input type="text" id="teamNameInput" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="teamHackathonSelect">Hackathon</label>
+                                <select id="teamHackathonSelect" required>
+                                    <option value="">Select a hackathon</option>
+                                    <option value="1">CodeFest 2023</option>
+                                    <option value="2">InnovateX</option>
+                                    <option value="3">AI Challenge</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="teamSize">Team Size</label>
+                                <select id="teamSize" required>
+                                    <option value="2">2 members</option>
+                                    <option value="3">3 members</option>
+                                    <option value="4">4 members</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="teamDescriptionInput">Team Description</label>
+                                <textarea id="teamDescriptionInput" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="teamLookingFor">Looking for members with skills:</label>
+                                <input type="text" id="teamLookingFor" placeholder="e.g., Frontend, Python, UI/UX" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="leaderName">Your Name</label>
+                                <input type="text" id="leaderName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="leaderEmail">Your Email</label>
+                                <input type="email" id="leaderEmail" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create Team</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Join Team Tab -->
+                <div class="tab-pane" id="join-tab">
+                    <div class="team-form-container">
+                        <h3>Join a Team</h3>
+                        <div class="team-filters">
+                            <div class="search-bar">
+                                <input type="text" placeholder="Search for teams..." id="joinTeamSearch">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <select id="joinHackathonFilter">
+                                <option value="all">All Hackathons</option>
+                                <option value="1">CodeFest 2023</option>
+                                <option value="2">InnovateX</option>
+                                <option value="3">AI Challenge</option>
+                            </select>
+                        </div>
+                        
+                        <div class="team-grid" id="joinTeamGrid">
+                            <!-- Teams will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Browse Teams Tab -->
+                <div class="tab-pane" id="browse-tab">
+                    <div class="team-form-container">
+                        <h3>All Teams</h3>
+                        <div class="team-filters">
+                            <div class="search-bar">
+                                <input type="text" placeholder="Search for teams..." id="browseTeamSearch">
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <select id="browseHackathonFilter">
+                                <option value="all">All Hackathons</option>
+                                <option value="1">CodeFest 2023</option>
+                                <option value="2">InnovateX</option>
+                                <option value="3">AI Challenge</option>
+                            </select>
+                        </div>
+                        
+                        <div class="team-grid" id="browseTeamGrid">
+                            <!-- Teams will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Team Modal -->
+    <div id="joinTeamModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-                <h2>Find Your Mentor</h2>
+                <h2>Join Team</h2>
             </div>
             <div class="modal-body">
-                <p>Connect with experienced seniors who can guide you in your career journey. Fill out the form below to find a mentor that matches your interests.</p>
-                <form id="findMentorForm">
+                <div class="team-details">
+                    <h3 id="teamName">Team Name</h3>
+                    <div class="team-meta">
+                        <span id="teamHackathon"><i class="fas fa-tag"></i> Hackathon</span>
+                        <span id="teamMembers"><i class="fas fa-users"></i> Members</span>
+                    </div>
+                    <p id="teamDescription">Team description goes here.</p>
+                </div>
+                <form id="joinTeamForm">
                     <div class="form-group">
-                        <label for="menteeName">Full Name</label>
-                        <input type="text" id="menteeName" required>
+                        <label for="joinFullName">Full Name</label>
+                        <input type="text" id="joinFullName" required>
                     </div>
                     <div class="form-group">
-                        <label for="menteeEmail">Email</label>
-                        <input type="email" id="menteeEmail" required>
+                        <label for="joinEmail">Email</label>
+                        <input type="email" id="joinEmail" required>
                     </div>
                     <div class="form-group">
-                        <label for="menteeYear">Current Year of Study</label>
-                        <select id="menteeYear" required>
-                            <option value="">Select year</option>
-                            <option value="1">1st Year</option>
-                            <option value="2">2nd Year</option>
-                            <option value="3">3rd Year</option>
-                            <option value="4">4th Year</option>
-                        </select>
+                        <label for="joinSkills">Your Skills</label>
+                        <input type="text" id="joinSkills" placeholder="e.g., Frontend, Python, UI/UX" required>
                     </div>
                     <div class="form-group">
-                        <label for="menteeDepartment">Department</label>
-                        <input type="text" id="menteeDepartment" required>
+                        <label for="joinMessage">Message to Team (Optional)</label>
+                        <textarea id="joinMessage" rows="3"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="menteeInterests">Areas of Interest</label>
-                        <textarea id="menteeInterests" rows="2" placeholder="e.g., Web Development, Data Science, Machine Learning, Competitive Programming" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="menteeGoals">Your Career Goals</label>
-                        <textarea id="menteeGoals" rows="3" placeholder="e.g., I want to get a job at a FAANG company, I want to start my own startup" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="mentorPreference">Mentor Preference (Optional)</label>
-                        <select id="mentorPreference">
-                            <option value="">No preference</option>
-                            <option value="alumni">Alumni working in industry</option>
-                            <option value="senior">Senior student from college</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="menteeMessage">Message for Potential Mentor (Optional)</label>
-                        <textarea id="menteeMessage" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Find Mentor</button>
+                    <button type="submit" class="btn btn-primary">Send Request</button>
                 </form>
             </div>
         </div>
