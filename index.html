@@ -3,255 +3,716 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JiitConnect - Connecting Students to Opportunities</title>
+    <title>CodeFest 2023 - JiitConnect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .hackathon-details {
+            padding: 120px 0 80px;
+            background: #f8f9fa;
+        }
+        
+        .details-container {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        
+        .details-main {
+            flex: 2;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .details-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .details-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .details-content {
+            padding: 30px;
+        }
+        
+        .details-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .details-title {
+            flex: 1;
+        }
+        
+        .details-title h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .details-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            color: #7f8c8d;
+        }
+        
+        .meta-item i {
+            margin-right: 8px;
+            color: #3498db;
+        }
+        
+        .details-status {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .status-open {
+            background: rgba(46, 204, 113, 0.1);
+            color: #2ecc71;
+        }
+        
+        .details-description {
+            margin-bottom: 30px;
+        }
+        
+        .details-description h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .details-description p {
+            color: #7f8c8d;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .details-timeline {
+            margin-bottom: 30px;
+        }
+        
+        .details-timeline h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-date {
+            flex: 0 0 120px;
+            font-weight: 600;
+            color: #3498db;
+        }
+        
+        .timeline-event {
+            flex: 1;
+            color: #7f8c8d;
+        }
+        
+        .details-prizes {
+            margin-bottom: 30px;
+        }
+        
+        .details-prizes h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .prizes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .prize-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .prize-position {
+            flex: 0 0 80px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .prize-value {
+            flex: 1;
+            color: #7f8c8d;
+        }
+        
+        .details-sidebar {
+            flex: 1;
+        }
+        
+        .registration-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .registration-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .registration-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .register-btn {
+            margin-top: 10px;
+        }
+        
+        .organizer-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .organizer-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .organizer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .organizer-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .organizer-logo i {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        
+        .organizer-details h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .organizer-details p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .organizer-contact {
+            margin-top: 15px;
+        }
+        
+        .organizer-contact a {
+            display: flex;
+            align-items: center;
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        
+        .organizer-contact i {
+            margin-right: 10px;
+        }
+        
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #7f8c8d;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px 20px;
+            max-height: 200px;
+        }
+        
+        @media (max-width: 992px) {
+            .details-container {
+                flex-direction: column;
+            }
+            
+            .details-sidebar {
+                width: 100%;
+            }
+            
+            .registration-card {
+                position: static;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">
+        <div class="nav-container">
+            <div class="nav-logo">
                 <h2>Jiit<span>Connect</span></h2>
             </div>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#mentorship">Mentorship</a></li>
-                    <li><a href="#hackathons">Hackathons</a></li>
-                    <li><a href="#team">Join Us</a></li>
-                </ul>
-            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#mentorship" class="nav-link">Mentorship</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#hackathons" class="nav-link">Hackathons</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#teams" class="nav-link">Find Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#join" class="nav-link">Join Us</a>
+                </li>
+            </ul>
             <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Hackathon Details Section -->
+    <section class="hackathon-details">
         <div class="container">
-            <div class="hero-content">
-                <h1>Connecting Students to <span>Opportunities</span></h1>
-                <p>Your gateway to mentorship, hackathons, and career guidance at JIIT</p>
-                <div class="hero-buttons">
-                    <a href="#mentorship" class="btn btn-primary">Explore Mentorship</a>
-                    <a href="#hackathons" class="btn btn-secondary">View Hackathons</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="floating-card">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <div class="floating-card">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="floating-card">
-                    <i class="fas fa-trophy"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">What We Offer</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon">
-                        <i class="fas fa-user-graduate"></i>
+            <div class="details-container">
+                <div class="details-main">
+                    <div class="details-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="CodeFest 2023">
                     </div>
-                    <h3>Senior Mentorship</h3>
-                    <p>Connect with seniors who've been placed in top companies like Amazon, Microsoft, and more.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Live Sessions</h3>
-                    <p>Weekly live sessions on how to prepare for interviews, build your resume, and develop skills.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>Hackathon Updates</h3>
-                    <p>Stay updated with the latest and most popular hackathons happening around you.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mentorship Section -->
-    <section id="mentorship" class="mentorship">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Mentorship Program</h2>
-                <p>Get guidance from those who've walked the path</p>
-            </div>
-            <div class="mentorship-content">
-                <div class="mentorship-image">
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1768&q=80" alt="Mentorship">
-                </div>
-                <div class="mentorship-text">
-                    <h3>How Our Mentorship Works</h3>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Connect with seniors from your field of interest</li>
-                        <li><i class="fas fa-check-circle"></i> Get personalized guidance for your career path</li>
-                        <li><i class="fas fa-check-circle"></i> Learn about interview experiences and preparation strategies</li>
-                        <li><i class="fas fa-check-circle"></i> Receive feedback on your projects and resume</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary" id="find-mentor-btn">Find a Mentor</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hackathons Section -->
-    <section id="hackathons" class="hackathons">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Upcoming Hackathons</h2>
-                <p>Register for exciting opportunities and showcase your skills</p>
-            </div>
-            <div class="hackathon-grid">
-                <div class="hackathon-card">
-                    <div class="hackathon-header">
-                        <span class="date">15-17 Oct</span>
-                        <span class="type">Online</span>
-                    </div>
-                    <h3>SIH 2025</h3>
-                    <p>A 48-hour coding marathon with prizes worth ₹1,00,000</p>
-                    <div class="hackathon-footer">
-                        <span><i class="fas fa-users"></i> 50+ Participants</span>
-                        <a href="#" class="register-btn" data-hackathon="codefest">Register Now</a>
-                    </div>
-                </div>
-                <div class="hackathon-card">
-                    <div class="hackathon-header">
-                        <span class="date">COMING SOON</span>
-                        <span class="type">OFFLINE</span>
-                    </div>
-                    <h3>SIH</h3>
-                    <p>Innovation challenge focusing on AI and Machine Learning</p>
-                    <div class="hackathon-footer">
-                        <span><i class="fas fa-users"></i> 300+ Participants</span>
-                        <a href="#" class="register-btn" data-hackathon="innovatex">Register Now</a>
-                    </div>
-                </div>
-                <div class="hackathon-card">
-                    <div class="hackathon-header">
-                        <span class="date">20-21 Dec</span>
-                        <span class="type">In-Person</span>
-                    </div>
-                    <h3>Buildathon</h3>
-                    <p>Hardware and software integration challenge</p>
-                    <div class="hackathon-footer">
-                        <span><i class="fas fa-users"></i> 200+ Participants</span>
-                        <a href="#" class="register-btn" data-hackathon="buildathon">Register Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Team Section -->
-    <section id="team" class="join-team">
-        <div class="container">
-            <div class="team-content">
-                <h2>We're <span>Recruiting</span> Soon</h2>
-                <p>Join our team and help build the largest student community at JIIT</p>
-                <div class="team-roles">
-                    <div class="role">
-                        <i class="fas fa-code"></i>
-                        <h3>Technical Team</h3>
-                    </div>
-                    <div class="role">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>Design Team</h3>
-                    </div>
-                    <div class="role">
-                        <i class="fas fa-bullhorn"></i>
-                        <h3>Marketing Team</h3>
-                    </div>
-                    <div class="role">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Partnerships</h3>
+                    <div class="details-content">
+                        <div class="details-header">
+                            <div class="details-title">
+                                <h1>CodeFest 2023</h1>
+                                <div class="details-meta">
+                                    <div class="meta-item">
+                                        <i class="fas fa-calendar"></i>
+                                        <span>Oct 15-16, 2023</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>24 Hours</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Delhi</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>500+ Participants</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="details-status status-open">
+                                Registration Open
+                            </div>
+                        </div>
+                        
+                        <div class="details-description">
+                            <h2>About CodeFest 2023</h2>
+                            <p>CodeFest 2023 is a 24-hour coding marathon that brings together developers, designers, and innovators to create amazing solutions to real-world problems. This year's theme is "Building a Sustainable Future" where participants will work on projects related to environmental sustainability, social impact, and technological innovation.</p>
+                            <p>Whether you're a beginner or an experienced coder, CodeFest offers a platform to learn, collaborate, and showcase your skills. With mentors from top tech companies, exciting workshops, and networking opportunities, this is an event you don't want to miss!</p>
+                        </div>
+                        
+                        <div class="details-timeline">
+                            <h2>Event Timeline</h2>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 15, 9:00 AM</div>
+                                <div class="timeline-event">Registration & Breakfast</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 15, 10:00 AM</div>
+                                <div class="timeline-event">Opening Ceremony & Theme Announcement</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 15, 11:00 AM</div>
+                                <div class="timeline-event">Team Formation & Ideation</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 15, 12:00 PM</div>
+                                <div class="timeline-event">Hacking Begins!</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 15, 7:00 PM</div>
+                                <div class="timeline-event">Dinner & Tech Talks</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 16, 9:00 AM</div>
+                                <div class="timeline-event">Breakfast & Project Finalization</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 16, 12:00 PM</div>
+                                <div class="timeline-event">Hacking Ends & Submission</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 16, 1:00 PM</div>
+                                <div class="timeline-event">Judging & Presentations</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 16, 4:00 PM</div>
+                                <div class="timeline-event">Closing Ceremony & Awards</div>
+                            </div>
+                        </div>
+                        
+                        <div class="details-prizes">
+                            <h2>Prizes</h2>
+                            <div class="prizes-list">
+                                <div class="prize-item">
+                                    <div class="prize-position">1st Place</div>
+                                    <div class="prize-value">₹50,000 + Internship Opportunities</div>
+                                </div>
+                                <div class="prize-item">
+                                    <div class="prize-position">2nd Place</div>
+                                    <div class="prize-value">₹30,000 + Goodies</div>
+                                </div>
+                                <div class="prize-item">
+                                    <div class="prize-position">3rd Place</div>
+                                    <div class="prize-value">₹20,000 + Goodies</div>
+                                </div>
+                                <div class="prize-item">
+                                    <div class="prize-position">Best Beginner Team</div>
+                                    <div class="prize-value">₹10,000 + Mentorship</div>
+                                </div>
+                                <div class="prize-item">
+                                    <div class="prize-position">Most Innovative</div>
+                                    <div class="prize-value">₹15,000 + Recognition</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-section">
+                            <h2>Frequently Asked Questions</h2>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    Who can participate in CodeFest 2023?
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    CodeFest 2023 is open to all college students, recent graduates, and young professionals. Participants can join individually or in teams of 2-4 members.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    Is there a registration fee?
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    No, CodeFest 2023 is completely free to attend. We provide meals, snacks, and swag to all participants.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    What should I bring to the event?
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Participants should bring their laptops, chargers, and any other devices they need for development. We'll provide power strips, Wi-Fi, and workspace. Don't forget to bring a sleeping bag if you plan to stay overnight!
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    Will there be mentors available during the event?
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    Yes, we'll have mentors from various tech companies available throughout the event to help with technical challenges and provide guidance on projects.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="notification-form">
-                    <p>Get notified when applications open</p>
-                    <form id="notify-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Notify Me</button>
-                    </form>
+                
+                <div class="details-sidebar">
+                    <div class="registration-card">
+                        <h3>Register Now</h3>
+                        <form class="registration-form" id="registrationForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="college">College/University</label>
+                                <input type="text" id="college" name="college" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience">Experience Level</label>
+                                <select id="experience" name="experience" required>
+                                    <option value="">Select your level</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="team">Team Preference</label>
+                                <select id="team" name="team" required>
+                                    <option value="">Select preference</option>
+                                    <option value="individual">Individual (will be assigned to a team)</option>
+                                    <option value="team">Already have a team</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dietary">Dietary Restrictions</label>
+                                <textarea id="dietary" name="dietary" placeholder="Please specify any dietary restrictions or allergies"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" name="terms" required> I agree to the terms and conditions
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary register-btn">Register Now</button>
+                        </form>
+                    </div>
+                    
+                    <div class="organizer-card">
+                        <h3>Organizer</h3>
+                        <div class="organizer-info">
+                            <div class="organizer-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="organizer-details">
+                                <h4>Tech Innovators Society</h4>
+                                <p>Delhi Technological University</p>
+                            </div>
+                        </div>
+                        <div class="organizer-contact">
+                            <a href="mailto:codefest@techinnovators.com">
+                                <i class="fas fa-envelope"></i>
+                                codefest@techinnovators.com
+                            </a>
+                            <a href="tel:+911234567890">
+                                <i class="fas fa-phone"></i>
+                                +91 12345 67890
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h2>Jiit<span>Connect</span></h2>
-                    <p>Connecting students to opportunities since 2023</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#mentorship">Mentorship</a></li>
-                        <li><a href="#hackathons">Hackathons</a></li>
-                        <li><a href="#team">Join Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> connect@jiit.ac.in</li>
-                        <li><i class="fas fa-map-marker-alt"></i> JIIT, Noida</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Jiit<span>Connect</span></h2>
+                <p>Connecting students to opportunities</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#mentorship">Mentorship</a></li>
+                    <li><a href="index.html#hackathons">Hackathons</a></li>
+                    <li><a href="index.html#teams">Find Teams</a></li>
+                    <li><a href="index.html#join">Join Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> contact@jiitconnect.com</li>
+                    <li><i class="fas fa-phone"></i> +91 12345 67890</li>
+                    <li><i class="fas fa-map-marker-alt"></i> JIIT, Noida</li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 JiitConnect. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 JiitConnect. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Hackathon Detail Modal -->
-    <div id="hackathon-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="hackathon-detail">
-                <!-- Hackathon details will be inserted here dynamically -->
-            </div>
-        </div>
-    </div>
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
 
-    <!-- Coming Soon Modal -->
-    <div id="coming-soon-modal" class="modal">
-        <div class="modal-content coming-soon-content">
-            <span class="close-modal">&times;</span>
-            <div class="coming-soon-icon">
-                <i class="fas fa-clock"></i>
-            </div>
-            <h2>Coming Soon!</h2>
-            <p>Our mentorship program is launching soon. Stay tuned for updates!</p>
-            <button class="btn btn-primary close-modal-btn">Got it!</button>
-        </div>
-    </div>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
 
-    <script src="script.js"></script>
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show a success message
+            alert(`Thank you, ${name}! Your registration for CodeFest 2023 has been submitted successfully. A confirmation email has been sent to ${email}.`);
+            
+            // Reset the form
+            this.reset();
+        });
+
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
 </body>
 </html>
