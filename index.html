@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JiitConnect - Your Gateway to Success</title>
+    <title>JIITConnect - Connecting Innovators</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,15 +11,18 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">
-                <h2>Jiit<span>Connect</span></h2>
+            <div class="nav-logo">
+                <h2>JIIT<span>Connect</span></h2>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#hackathons">Hackathons</a></li>
-                <li><a href="#teams">Find Team</a></li>
-                <li><a href="#join">Join Us</a></li>
-            </ul>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#hackathons">Hackathons</a></li>
+                    <li><a href="#teams">Find a Team</a></li>
+                    <li><a href="#coming-soon">Coming Soon</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -30,75 +33,29 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
-            <div class="lighting-effect"></div>
-            <div class="light-beam beam-1"></div>
-            <div class="light-beam beam-2"></div>
-            <div class="light-beam beam-3"></div>
-        </div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-tagline">Empowering Student Success</div>
-                <h1 class="hero-title">
-                    <span class="title-line">Connect,</span>
-                    <span class="title-line">Learn,</span>
-                    <span class="title-line highlight">Excel</span>
-                </h1>
-                <p class="hero-subtitle">Your gateway to mentorship, hackathons, and career opportunities</p>
+                <h1 class="hero-title">Innovate. Collaborate. <span>Elevate.</span></h1>
+                <p class="hero-subtitle">Your gateway to hackathons, team collaboration, and endless opportunities at JIIT</p>
                 <div class="hero-buttons">
-                    <a href="#hackathons" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> Explore Hackathons
-                    </a>
-                    <a href="#teams" class="btn btn-secondary">
-                        <i class="fas fa-users"></i> Find Your Team
-                    </a>
-                </div>
-                <div class="hero-features">
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>50+ Hackathons</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>500+ Active Students</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>30+ Teams Formed</span>
-                    </div>
+                    <a href="#hackathons" class="btn btn-primary">Explore Hackathons</a>
+                    <a href="#teams" class="btn btn-secondary">Find a Team</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-image-container">
-                    <div class="hero-image">
-                        <div class="image-card card-1">
-                            <div class="card-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <h3>Build Skills</h3>
-                        </div>
-                        <div class="image-card card-2">
-                            <div class="card-icon">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                            <h3>Network</h3>
-                        </div>
-                        <div class="image-card card-3">
-                            <div class="card-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <h3>Compete</h3>
-                        </div>
-                    </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Code</h3>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaborate</h3>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Compete</h3>
                 </div>
             </div>
-        </div>
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
         </div>
     </section>
 
@@ -106,180 +63,261 @@
     <section id="hackathons" class="hackathons">
         <div class="container">
             <div class="section-header">
-                <h2>Upcoming Hackathons</h2>
-                <p>Discover and register for exciting hackathon opportunities</p>
+                <h2 class="section-title">Upcoming <span>Hackathons</span></h2>
+                <p class="section-subtitle">Join exciting competitions and showcase your skills</p>
             </div>
+            
             <div class="hackathon-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="online">Online</button>
-                <button class="filter-btn" data-filter="offline">Offline</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                <button class="filter-btn" data-filter="popular">Popular</button>
             </div>
+            
             <div class="hackathon-grid">
-                <div class="hackathon-card" data-category="online">
+                <!-- Hackathon Card 1 -->
+                <div class="hackathon-card" data-category="upcoming">
                     <div class="hackathon-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Hackathon">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hackathon">
                         <div class="hackathon-date">
                             <span class="day">15</span>
-                            <span class="month">JUN</span>
+                            <span class="month">OCT</span>
                         </div>
                     </div>
                     <div class="hackathon-content">
                         <h3>CodeFest 2023</h3>
+                        <p>24-hour coding marathon with exciting prizes and networking opportunities.</p>
                         <div class="hackathon-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
-                            <span><i class="fas fa-trophy"></i> $10,000</span>
+                            <span><i class="fas fa-map-marker-alt"></i> JIIT Campus</span>
+                            <span><i class="fas fa-users"></i> 200+ Participants</span>
                         </div>
-                        <p>Join the biggest online coding competition of the year</p>
-                        <button class="btn btn-primary register-btn" data-id="1">Register Now</button>
+                        <button class="btn btn-primary register-btn" data-hackathon="codefest">Register Now</button>
                     </div>
                 </div>
-                <div class="hackathon-card" data-category="offline">
+                
+                <!-- Hackathon Card 2 -->
+                <div class="hackathon-card" data-category="popular">
                     <div class="hackathon-image">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Hackathon">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hackathon">
                         <div class="hackathon-date">
-                            <span class="day">22</span>
-                            <span class="month">JUN</span>
+                            <span class="day">05</span>
+                            <span class="month">NOV</span>
                         </div>
                     </div>
                     <div class="hackathon-content">
                         <h3>InnovateX</h3>
+                        <p>Showcase your innovative ideas and compete with the best minds in the region.</p>
                         <div class="hackathon-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Delhi</span>
-                            <span><i class="fas fa-trophy"></i> $15,000</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
+                            <span><i class="fas fa-users"></i> 500+ Participants</span>
                         </div>
-                        <p>48-hour innovation challenge with industry mentors</p>
-                        <button class="btn btn-primary register-btn" data-id="2">Register Now</button>
+                        <button class="btn btn-primary register-btn" data-hackathon="innovatex">Register Now</button>
                     </div>
                 </div>
-                <div class="hackathon-card" data-category="online">
+                
+                <!-- Hackathon Card 3 -->
+                <div class="hackathon-card" data-category="upcoming">
                     <div class="hackathon-image">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Hackathon">
+                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hackathon">
                         <div class="hackathon-date">
-                            <span class="day">05</span>
-                            <span class="month">JUL</span>
+                            <span class="day">20</span>
+                            <span class="month">NOV</span>
                         </div>
                     </div>
                     <div class="hackathon-content">
                         <h3>AI Challenge</h3>
+                        <p>Build AI-powered solutions to real-world problems and win amazing prizes.</p>
                         <div class="hackathon-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Online</span>
-                            <span><i class="fas fa-trophy"></i> $20,000</span>
+                            <span><i class="fas fa-map-marker-alt"></i> JIIT Campus</span>
+                            <span><i class="fas fa-users"></i> 150+ Participants</span>
                         </div>
-                        <p>Build innovative AI solutions for real-world problems</p>
-                        <button class="btn btn-primary register-btn" data-id="3">Register Now</button>
+                        <button class="btn btn-primary register-btn" data-hackathon="aichallenge">Register Now</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Teams Section -->
+    <!-- Find a Team Section -->
     <section id="teams" class="teams">
         <div class="container">
             <div class="section-header">
-                <h2>Find Your Team</h2>
-                <p>Connect with other students and form teams for hackathons</p>
+                <h2 class="section-title">Find a <span>Team</span></h2>
+                <p class="section-subtitle">Join existing teams or create your own to collaborate on projects</p>
             </div>
+            
             <div class="team-actions">
-                <a href="https://forms.gle/exampleCreateTeam" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-plus-circle"></i> Create Team
-                </a>
-                <a href="https://forms.gle/exampleJoinTeam" target="_blank" class="btn btn-secondary">
-                    <i class="fas fa-user-plus"></i> Join Team
-                </a>
-            </div>
-            <div class="team-info">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Collaborate</h3>
-                    <p>Find like-minded students to work with on hackathons</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Innovate</h3>
-                    <p>Combine skills and ideas to create amazing projects</p>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Win</h3>
-                    <p>Increase your chances of winning with a strong team</p>
+                <button class="btn btn-primary" id="create-team-btn">Create New Team</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search teams by skills or project...">
+                    <button><i class="fas fa-search"></i></button>
                 </div>
             </div>
-            <div class="team-testimonial">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <i class="fas fa-quote-left"></i>
-                        <p>JiitConnect helped me find the perfect team for InnovateX. We ended up winning first place!</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Testimonial">
-                        <div>
-                            <h4>Rahul Sharma</h4>
-                            <p>3rd Year, CSE</p>
+            
+            <div class="team-grid">
+                <!-- Team Card 1 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <div class="team-logo">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>CodeCrafters</h3>
+                            <p>Web Development Project</p>
                         </div>
                     </div>
+                    <div class="team-skills">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="team-members">
+                        <div class="member-count">
+                            <i class="fas fa-users"></i> 3/4 members
+                        </div>
+                        <div class="member-avatars">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Member">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Member">
+                            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Member">
+                            <div class="add-member">+</div>
+                        </div>
+                    </div>
+                    <div class="team-actions">
+                        <button class="btn btn-primary join-team-btn">Join Team</button>
+                        <button class="btn btn-outline">View Details</button>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Us Section -->
-    <section id="join" class="join">
-        <div class="container">
-            <div class="join-content">
-                <div class="join-text">
-                    <h2>Join Our Team</h2>
-                    <p>We're looking for passionate individuals to help us build the future of mentorship at JiitConnect</p>
-                    <ul class="join-features">
-                        <li><i class="fas fa-check"></i> Make a real impact on campus</li>
-                        <li><i class="fas fa-check"></i> Develop leadership and organizational skills</li>
-                        <li><i class="fas fa-check"></i> Connect with industry professionals</li>
-                        <li><i class="fas fa-check"></i> Build your network and resume</li>
-                    </ul>
-                    <button class="btn btn-primary" id="joinUsBtn">Apply Now</button>
+                
+                <!-- Team Card 2 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <div class="team-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>AppMasters</h3>
+                            <p>Mobile App Development</p>
+                        </div>
+                    </div>
+                    <div class="team-skills">
+                        <span>Flutter</span>
+                        <span>Firebase</span>
+                        <span>UI/UX</span>
+                    </div>
+                    <div class="team-members">
+                        <div class="member-count">
+                            <i class="fas fa-users"></i> 2/4 members
+                        </div>
+                        <div class="member-avatars">
+                            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Member">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Member">
+                            <div class="add-member">+</div>
+                            <div class="add-member">+</div>
+                        </div>
+                    </div>
+                    <div class="team-actions">
+                        <button class="btn btn-primary join-team-btn">Join Team</button>
+                        <button class="btn btn-outline">View Details</button>
+                    </div>
                 </div>
-                <div class="join-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Team">
-                    <div class="join-badge">Join Us</div>
+                
+                <!-- Team Card 3 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <div class="team-logo">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="team-info">
+                            <h3>AI Innovators</h3>
+                            <p>Machine Learning Project</p>
+                        </div>
+                    </div>
+                    <div class="team-skills">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>Data Science</span>
+                    </div>
+                    <div class="team-members">
+                        <div class="member-count">
+                            <i class="fas fa-users"></i> 4/4 members
+                        </div>
+                        <div class="member-avatars">
+                            <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Member">
+                            <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="Member">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Member">
+                            <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Member">
+                        </div>
+                    </div>
+                    <div class="team-actions">
+                        <button class="btn btn-outline disabled">Team Full</button>
+                        <button class="btn btn-outline">View Details</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Coming Soon Section -->
-    <section class="coming-soon">
+    <section id="coming-soon" class="coming-soon">
         <div class="container">
-            <div class="coming-soon-content">
-                <h2>More Features Coming Soon</h2>
-                <p>We're constantly working to bring you new and exciting features</p>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-video"></i>
-                        <h3>Live Sessions</h3>
-                        <p>Interactive live sessions with industry experts</p>
+            <div class="section-header">
+                <h2 class="section-title">Coming <span>Soon</span></h2>
+                <p class="section-subtitle">Exciting new features to enhance your JIITConnect experience</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-book"></i>
-                        <h3>Resource Library</h3>
-                        <p>Curated learning materials and resources</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <h3>Event Calendar</h3>
-                        <p>Never miss important deadlines and events</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-comments"></i>
-                        <h3>Discussion Forums</h3>
-                        <p>Connect and discuss with fellow students</p>
+                    <h3>Mentorship Program</h3>
+                    <p>Connect with industry professionals and alumni who can guide you in your career journey.</p>
+                    <div class="feature-status">
+                        <span class="status-badge">Launching Soon</span>
                     </div>
                 </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Internship & Job Board</h3>
+                    <p>Find exclusive internship and job opportunities curated specifically for JIIT students.</p>
+                    <div class="feature-status">
+                        <span class="status-badge">In Development</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Workshops & Webinars</h3>
+                    <p>Attend skill-building workshops and webinars conducted by industry experts.</p>
+                    <div class="feature-status">
+                        <span class="status-badge">Planning Phase</span>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Showcase</h3>
+                    <p>Display your projects and get feedback from peers and industry professionals.</p>
+                    <div class="feature-status">
+                        <span class="status-badge">Coming Next</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="join-team-section">
+                <h3>Join Our Team</h3>
+                <p>Be part of the team that's building the future of student collaboration at JIIT</p>
+                <button class="btn btn-primary" id="join-our-team-btn">Apply Now</button>
             </div>
         </div>
     </section>
@@ -289,131 +327,108 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <h2>Jiit<span>Connect</span></h2>
-                    <p>Connecting students to opportunities</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <h2>JIIT<span>Connect</span></h2>
+                    <p>Connecting innovators, creators, and leaders of tomorrow.</p>
                 </div>
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#hackathons">Hackathons</a></li>
-                        <li><a href="#teams">Find Team</a></li>
-                        <li><a href="#join">Join Us</a></li>
+                        <li><a href="#teams">Find a Team</a></li>
+                        <li><a href="#coming-soon">Coming Soon</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> contact@jiitconnect.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Jaypee Institute of Information Technology</li>
-                    </ul>
+                    <p><i class="fas fa-envelope"></i> contact@jiitconnect.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> JIIT, Sector 62, Noida</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 JiitConnect. All rights reserved.</p>
+                <p>&copy; 2023 JIITConnect. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Hackathon Registration Modal -->
-    <div id="hackathonModal" class="modal">
+    <div class="modal" id="hackathon-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-header">
-                <h2 id="modalTitle">Hackathon Registration</h2>
+                <h2 id="modal-title">Hackathon Registration</h2>
             </div>
             <div class="modal-body">
                 <div class="hackathon-details">
-                    <img id="modalImage" src="" alt="Hackathon">
+                    <img id="modal-image" src="" alt="Hackathon">
                     <div class="details-content">
-                        <h3 id="modalHackathonName">Hackathon Name</h3>
+                        <h3 id="modal-hackathon-name">Hackathon Name</h3>
+                        <p id="modal-description">Hackathon description goes here.</p>
                         <div class="details-meta">
-                            <span id="modalDate"><i class="fas fa-calendar-alt"></i> Date</span>
-                            <span id="modalLocation"><i class="fas fa-map-marker-alt"></i> Location</span>
-                            <span id="modalPrize"><i class="fas fa-trophy"></i> Prize</span>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span id="modal-date">Date</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="modal-venue">Venue</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span id="modal-duration">Duration</span>
+                            </div>
                         </div>
-                        <p id="modalDescription">Hackathon description goes here.</p>
+                        <div class="prizes">
+                            <h4>Prizes</h4>
+                            <ul id="modal-prizes">
+                                <li>1st Prize: ₹50,000</li>
+                                <li>2nd Prize: ₹30,000</li>
+                                <li>3rd Prize: ₹20,000</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <form id="registrationForm">
+                
+                <form class="registration-form" id="registration-form">
+                    <h3>Register for the Hackathon</h3>
                     <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" required>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" required>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
-                        <label for="studentId">Student ID</label>
-                        <input type="text" id="studentId" required>
+                        <label for="student-id">Student ID</label>
+                        <input type="text" id="student-id" name="student-id" required>
                     </div>
                     <div class="form-group">
-                        <label for="skills">Skills</label>
-                        <input type="text" id="skills" placeholder="e.g., Frontend, Python, UI/UX">
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Experience Level</label>
-                        <select id="experience">
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
+                        <label for="branch">Branch</label>
+                        <select id="branch" name="branch" required>
+                            <option value="">Select Branch</option>
+                            <option value="cse">Computer Science Engineering</option>
+                            <option value="it">Information Technology</option>
+                            <option value="ece">Electronics & Communication Engineering</option>
+                            <option value="ee">Electrical Engineering</option>
+                            <option value="me">Mechanical Engineering</option>
+                            <option value="ce">Civil Engineering</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="teamPreference">Team Preference</label>
-                        <select id="teamPreference">
-                            <option value="solo">Participate Solo</option>
-                            <option value="find">Help me find a team</option>
-                            <option value="have">I already have a team</option>
-                        </select>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="terms">
-                        <label for="terms">I agree to the terms and conditions</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register Now</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Join Us Modal -->
-    <div id="joinUsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Join the JiitConnect Team</h2>
-            </div>
-            <div class="modal-body">
-                <p>We're excited that you're interested in joining our team! Please fill out the form below to apply.</p>
-                <form id="joinUsForm">
-                    <div class="form-group">
-                        <label for="applicantName">Full Name</label>
-                        <input type="text" id="applicantName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicantEmail">Email</label>
-                        <input type="email" id="applicantEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicantPhone">Phone Number</label>
-                        <input type="tel" id="applicantPhone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicantYear">Current Year of Study</label>
-                        <select id="applicantYear" required>
-                            <option value="">Select year</option>
+                        <label for="year">Year of Study</label>
+                        <select id="year" name="year" required>
+                            <option value="">Select Year</option>
                             <option value="1">1st Year</option>
                             <option value="2">2nd Year</option>
                             <option value="3">3rd Year</option>
@@ -421,31 +436,160 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="applicantDepartment">Department</label>
-                        <input type="text" id="applicantDepartment" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicantRole">Role you're interested in</label>
-                        <select id="applicantRole" required>
-                            <option value="">Select role</option>
-                            <option value="mentorship">Mentorship Coordinator</option>
-                            <option value="events">Events Manager</option>
-                            <option value="marketing">Marketing & Outreach</option>
-                            <option value="tech">Tech Team</option>
-                            <option value="design">Design Team</option>
+                        <label for="team">Team Preference</label>
+                        <select id="team" name="team" required>
+                            <option value="">Select Preference</option>
+                            <option value="individual">Individual (Will be assigned a team)</option>
+                            <option value="team">Already have a team</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="applicantSkills">Your Skills</label>
-                        <textarea id="applicantSkills" rows="2" required></textarea>
+                        <label for="skills">Skills (comma separated)</label>
+                        <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript, Python, UI/UX">
                     </div>
                     <div class="form-group">
-                        <label for="applicantMotivation">Why do you want to join JiitConnect?</label>
-                        <textarea id="applicantMotivation" rows="3" required></textarea>
+                        <label for="experience">Previous Hackathon Experience</label>
+                        <textarea id="experience" name="experience" rows="3"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the terms and conditions</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Registration</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Team Modal -->
+    <div class="modal" id="create-team-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Create a New Team</h2>
+            </div>
+            <div class="modal-body">
+                <form class="create-team-form" id="create-team-form">
+                    <div class="form-group">
+                        <label for="team-name">Team Name</label>
+                        <input type="text" id="team-name" name="team-name" required>
                     </div>
                     <div class="form-group">
-                        <label for="applicantExperience">Relevant Experience (Optional)</label>
-                        <textarea id="applicantExperience" rows="2"></textarea>
+                        <label for="team-description">Team Description</label>
+                        <textarea id="team-description" name="team-description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="">Select Project Type</option>
+                            <option value="web">Web Development</option>
+                            <option value="mobile">Mobile App Development</option>
+                            <option value="ai">AI/Machine Learning</option>
+                            <option value="blockchain">Blockchain</option>
+                            <option value="iot">IoT</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="team-size">Team Size</label>
+                        <select id="team-size" name="team-size" required>
+                            <option value="">Select Team Size</option>
+                            <option value="2">2 Members</option>
+                            <option value="3">3 Members</option>
+                            <option value="4">4 Members</option>
+                            <option value="5">5 Members</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="required-skills">Required Skills (comma separated)</label>
+                        <input type="text" id="required-skills" name="required-skills" placeholder="e.g., JavaScript, Python, UI/UX">
+                    </div>
+                    <div class="form-group">
+                        <label for="team-goal">Team Goal</label>
+                        <textarea id="team-goal" name="team-goal" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Team</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Our Team Modal -->
+    <div class="modal" id="join-our-team-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Join Our Team</h2>
+            </div>
+            <div class="modal-body">
+                <p>We're looking for passionate individuals to help us build and grow JIITConnect. If you're interested in web development, design, marketing, or operations, we'd love to hear from you!</p>
+                
+                <form class="join-our-team-form" id="join-our-team-form">
+                    <div class="form-group">
+                        <label for="applicant-name">Full Name</label>
+                        <input type="text" id="applicant-name" name="applicant-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-email">Email Address</label>
+                        <input type="email" id="applicant-email" name="applicant-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-phone">Phone Number</label>
+                        <input type="tel" id="applicant-phone" name="applicant-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-student-id">Student ID</label>
+                        <input type="text" id="applicant-student-id" name="applicant-student-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-branch">Branch</label>
+                        <select id="applicant-branch" name="applicant-branch" required>
+                            <option value="">Select Branch</option>
+                            <option value="cse">Computer Science Engineering</option>
+                            <option value="it">Information Technology</option>
+                            <option value="ece">Electronics & Communication Engineering</option>
+                            <option value="ee">Electrical Engineering</option>
+                            <option value="me">Mechanical Engineering</option>
+                            <option value="ce">Civil Engineering</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="applicant-year">Year of Study</label>
+                        <select id="applicant-year" name="applicant-year" required>
+                            <option value="">Select Year</option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position of Interest</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select Position</option>
+                            <option value="web-dev">Web Development</option>
+                            <option value="ui-ux">UI/UX Design</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="content">Content Creation</option>
+                            <option value="operations">Operations</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="skills">Relevant Skills</label>
+                        <input type="text" id="applicant-skills" name="applicant-skills" placeholder="e.g., JavaScript, Photoshop, Content Writing">
+                    </div>
+                    <div class="form-group">
+                        <label for="motivation">Why do you want to join our team?</label>
+                        <textarea id="motivation" name="motivation" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Previous Experience (if any)</label>
+                        <textarea id="applicant-experience" name="applicant-experience" rows="3"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="team-terms" name="team-terms" required>
+                        <label for="team-terms">I agree to the terms and conditions</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit Application</button>
                 </form>
