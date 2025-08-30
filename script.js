@@ -42,14 +42,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-// Notification form submission
-document.querySelector('.notify-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = this.querySelector('input[type="email"]').value;
-    if (email) {
-        // In a real application, you would send this to your server
-        alert('Thank you! We will notify you when the mentorship program launches.');
-        this.reset();
-    }
-});
