@@ -13,6 +13,7 @@ document.querySelector('.mobile-toggle').addEventListener('click', function() {
         navLinks.style.backgroundColor = 'white';
         navLinks.style.padding = '20px';
         navLinks.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.1)';
+        navLinks.style.borderRadius = '0 0 10px 10px';
     }
 });
 
