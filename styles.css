@@ -125,7 +125,7 @@ header {
     color: transparent;
 }
 
-/* Hero Section - Redesigned for Mobile */
+/* Hero Section - Enhanced with more effects */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -133,6 +133,7 @@ header {
     align-items: center;
     overflow: hidden;
     background-color: var(--dark);
+    margin-top: -1px; /* Remove white space above navigation */
 }
 
 .hero-bg {
@@ -210,6 +211,42 @@ header {
     75% { transform: translate(15px, 10px) rotate(3deg); }
 }
 
+/* Floating particles */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: rise linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rise {
+    0% { 
+        transform: translateY(100vh) scale(0); 
+        opacity: 0; 
+    }
+    10% { 
+        opacity: 0.4; 
+    }
+    90% { 
+        opacity: 0.4; 
+    }
+    100% { 
+        transform: translateY(-100px) scale(1); 
+        opacity: 0; 
+    }
+}
+
 .hero-content {
     position: relative;
     z-index: 10;
@@ -231,6 +268,16 @@ header {
     color: var(--secondary);
     border: 1px solid rgba(46, 49, 146, 0.3);
     backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.hero-badge.floating {
+    animation: floatBadge 4s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 .hero-title {
@@ -243,6 +290,12 @@ header {
     color: transparent;
     max-width: 900px;
     line-height: 1.2;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .hero-description {
@@ -250,6 +303,18 @@ header {
     max-width: 700px;
     margin: 0 auto 40px;
     color: #cbd5e1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-buttons {
@@ -258,6 +323,8 @@ header {
     margin-top: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    animation: fadeInUp 1s ease-out 0.2s;
+    animation-fill-mode: both;
 }
 
 .btn {
@@ -299,6 +366,8 @@ header {
     gap: 40px;
     margin-top: 80px;
     flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.4s;
+    animation-fill-mode: both;
 }
 
 .feature {
