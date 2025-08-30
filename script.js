@@ -1,37 +1,3 @@
-// Create floating particles
-function createParticles() {
-    const particlesContainer = document.getElementById('particles');
-    const particleCount = 50;
-    
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random size between 3px and 8px
-        const size = Math.random() * 5 + 3;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        
-        // Random position
-        particle.style.left = `${Math.random() * 100}%`;
-        
-        // Random animation duration between 10s and 20s
-        const duration = Math.random() * 10 + 10;
-        particle.style.animationDuration = `${duration}s`;
-        
-        // Random animation delay
-        particle.style.animationDelay = `${Math.random() * 5}s`;
-        
-        // Random opacity
-        particle.style.opacity = Math.random() * 0.5 + 0.2;
-        
-        particlesContainer.appendChild(particle);
-    }
-}
-
-// Initialize particles when page loads
-window.addEventListener('load', createParticles);
-
 // Mobile Navigation Toggle
 document.querySelector('.mobile-toggle').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
