@@ -3,2295 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JIITConnect - Connecting Innovators</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>JIITCONNECT - Student Platform</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6a11cb;
-            --secondary: #2575fc;
-            --accent: #ff416c;
-            --dark: #0f0c29;
-            --darker: #030b17;
-            --light: #f8f9fa;
-            --text: #333;
-            --text-light: #777;
-            --gradient-1: linear-gradient(135deg, var(--primary), var(--secondary));
-            --gradient-2: linear-gradient(135deg, var(--secondary), var(--accent));
-            --gradient-3: linear-gradient(135deg, var(--accent), var(--primary));
-            --gradient-dark: linear-gradient(to bottom, var(--darker), var(--dark));
-            --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            --box-shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.3);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--text);
-            margin: 5px 0;
-            transition: var(--transition);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 150px 0 80px;
-            background: linear-gradient(135deg, rgba(106, 17, 203, 0.05), rgba(37, 117, 252, 0.05));
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero-title span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-1);
-            z-index: -1;
-            transition: var(--transition);
-        }
-
-        .btn-primary {
-            color: white;
-            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
-        }
-
-        .btn-primary::before {
-            background: var(--gradient-1);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary::before {
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transform-origin: left;
-        }
-
-        .btn-secondary:hover {
-            color: white;
-        }
-
-        .btn-secondary:hover::before {
-            transform: scaleX(1);
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            position: relative;
-            max-width: 500px;
-        }
-
-        .floating-card {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: white;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--box-shadow);
-            animation: float 6s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        .floating-card:nth-child(1) {
-            top: 0;
-            left: 50px;
-            animation-delay: 0s;
-            background: linear-gradient(135deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
-        }
-
-        .floating-card:nth-child(2) {
-            top: 100px;
-            right: 50px;
-            animation-delay: 2s;
-            background: linear-gradient(135deg, rgba(37, 117, 252, 0.1), rgba(255, 65, 108, 0.1));
-        }
-
-        .floating-card:nth-child(3) {
-            bottom: 0;
-            left: 150px;
-            animation-delay: 4s;
-            background: linear-gradient(135deg, rgba(255, 65, 108, 0.1), rgba(106, 17, 203, 0.1));
-        }
-
-        .floating-card i {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .floating-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Hackathons Section */
-        .hackathons {
-            background-color: white;
-            position: relative;
-        }
-
-        .hackathons::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAyKSIvPjwvcGF0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
-            opacity: 0.5;
-            z-index: -1;
-        }
-
-        .hackathon-filters {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 15px;
-        }
-
-        .filter-btn {
-            padding: 8px 20px;
-            border-radius: 50px;
-            border: 2px solid #eaeaea;
-            background: white;
-            color: var(--text);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .filter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-1);
-            z-index: -1;
-            transition: var(--transition);
-            transform: scaleX(0);
-            transform-origin: left;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            color: white;
-            border-color: transparent;
-        }
-
-        .filter-btn.active::before,
-        .filter-btn:hover::before {
-            transform: scaleX(1);
-        }
-
-        .hackathon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .hackathon-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .hackathon-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-
-        .hackathon-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-dark);
-        }
-
-        .hackathon-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .hackathon-image {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .hackathon-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .hackathon-card:hover .hackathon-image img {
-            transform: scale(1.05);
-        }
-
-        .hackathon-date {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: white;
-            border-radius: 10px;
-            width: 60px;
-            height: 70px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .hackathon-date .day {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .hackathon-date .month {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        .hackathon-content {
-            padding: 25px;
-        }
-
-        .hackathon-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hackathon-content p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .hackathon-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .hackathon-meta span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        .hackathon-meta i {
-            color: var(--primary);
-        }
-
-        .register-btn {
-            width: 100%;
-        }
-
-        /* Team Button Section */
-        .team-button-section {
-            background-color: var(--light);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .team-button-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .team-button-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .team-button-title span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .team-button-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
-
-        .team-button {
-            display: inline-block;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            background: var(--gradient-1);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 10px 25px rgba(106, 17, 203, 0.3);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .team-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-2);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .team-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(106, 17, 203, 0.4);
-        }
-
-        .team-button:hover::before {
-            opacity: 1;
-        }
-
-        /* Coming Soon Section */
-        .coming-soon {
-            background-color: white;
-            position: relative;
-        }
-
-        .coming-soon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjAyKSIvPjwvcGF0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
-            opacity: 0.5;
-            z-index: -1;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .feature-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-dark);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            background: var(--gradient-2);
-        }
-
-        .feature-icon i {
-            font-size: 2rem;
-            color: white;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            flex: 1;
-        }
-
-        .feature-status {
-            margin-top: auto;
-        }
-
-        .status-badge {
-            background: rgba(106, 17, 203, 0.1);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            display: inline-block;
-        }
-
-        .join-team-section {
-            background: linear-gradient(135deg, rgba(106, 17, 203, 0.05), rgba(37, 117, 252, 0.05));
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .join-team-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .join-team-section p {
-            color: var(--text-light);
-            margin-bottom: 25px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--gradient-dark);
-            color: white;
-            padding: 70px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-logo h2 span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .footer-logo p {
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-
-        .footer-links h3,
-        .footer-contact h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-links h3::after,
-        .footer-contact h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--gradient-1);
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links ul li a {
-            color: #aaa;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links ul li a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .footer-contact p {
-            color: #aaa;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-contact i {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-        }
-
-        /* Team Page */
-        .team-page {
-            background: linear-gradient(135deg, rgba(106, 17, 203, 0.05), rgba(37, 117, 252, 0.05));
-            min-height: 100vh;
-            padding-top: 100px;
-        }
-
-        .team-page-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .team-page-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .team-page-title span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .team-page-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .team-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background: white;
-            border-radius: 50px;
-            padding: 5px 20px;
-            box-shadow: var(--box-shadow);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .search-bar input {
-            border: none;
-            outline: none;
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-        }
-
-        .search-bar button {
-            background: none;
-            border: none;
-            color: var(--primary);
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .team-filters {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .team-filter-btn {
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid #eaeaea;
-            background: white;
-            color: var(--text);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .team-filter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-1);
-            z-index: -1;
-            transition: var(--transition);
-            transform: scaleX(0);
-            transform-origin: left;
-        }
-
-        .team-filter-btn.active,
-        .team-filter-btn:hover {
-            color: white;
-            border-color: transparent;
-        }
-
-        .team-filter-btn.active::before,
-        .team-filter-btn:hover::before {
-            transform: scaleX(1);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .team-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            position: relative;
-        }
-
-        .team-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: var(--transition);
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-dark);
-        }
-
-        .team-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .team-header {
-            padding: 20px;
-            border-bottom: 1px solid #eaeaea;
-            display: flex;
-            align-items: center;
-        }
-
-        .team-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-            transition: var(--transition);
-        }
-
-        .team-card:hover .team-logo {
-            background: var(--gradient-2);
-        }
-
-        .team-logo i {
-            font-size: 1.8rem;
-            color: white;
-        }
-
-        .team-info {
-            flex: 1;
-        }
-
-        .team-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-
-        .team-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .team-status {
-            display: flex;
-            gap: 8px;
-        }
-
-        .status {
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .status.active {
-            background: rgba(76, 175, 80, 0.1);
-            color: #4caf50;
-        }
-
-        .status.recruiting {
-            background: rgba(33, 150, 243, 0.1);
-            color: #2196f3;
-        }
-
-        .status.full {
-            background: rgba(244, 67, 54, 0.1);
-            color: #f44336;
-        }
-
-        .difficulty {
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            background: rgba(255, 152, 0, 0.1);
-            color: #ff9800;
-        }
-
-        .team-progress {
-            padding: 15px 20px;
-        }
-
-        .progress-bar {
-            height: 8px;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 5px;
-        }
-
-        .progress {
-            height: 100%;
-            background: var(--gradient-1);
-            border-radius: 4px;
-            transition: var(--transition);
-        }
-
-        .progress-text {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .team-details {
-            padding: 0 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .team-description {
-            margin-bottom: 15px;
-            flex: 1;
-        }
-
-        .team-description p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        .team-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            background: rgba(106, 17, 203, 0.1);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .team-members {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .member-count {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .member-count i {
-            color: var(--primary);
-        }
-
-        .member-avatars {
-            display: flex;
-        }
-
-        .member-avatars img {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            border: 2px solid white;
-            margin-left: -10px;
-        }
-
-        .member-avatars img:first-child {
-            margin-left: 0;
-        }
-
-        .add-member {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: #eaeaea;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin-left: -10px;
-            border: 2px solid white;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .add-member:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .team-actions {
-            padding: 15px 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .team-actions .btn {
-            flex: 1;
-        }
-
-        .team-note {
-            padding: 0 20px 20px;
-            font-size: 0.8rem;
-            color: var(--text-light);
-            font-style: italic;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .team-note i {
-            color: var(--primary);
-        }
-
-        .team-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .stat-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: var(--box-shadow);
-            display: flex;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow-dark);
-        }
-
-        .stat-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            transition: var(--transition);
-        }
-
-        .stat-card:hover .stat-icon {
-            background: var(--gradient-2);
-        }
-
-        .stat-icon i {
-            font-size: 1.8rem;
-            color: white;
-        }
-
-        .stat-info h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .stat-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* Contact Page */
-        .contact-page {
-            background: linear-gradient(135deg, rgba(106, 17, 203, 0.05), rgba(37, 117, 252, 0.05));
-            min-height: 100vh;
-            padding-top: 100px;
-        }
-
-        .contact-page-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .contact-page-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .contact-page-title span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact-page-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow-dark);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: var(--transition);
-        }
-
-        .contact-item:hover .contact-icon {
-            background: var(--gradient-2);
-        }
-
-        .contact-icon i {
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .contact-details h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .contact-details p {
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(106, 17, 203, 0.1);
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background: var(--gradient-1);
-            color: white;
-            transform: translateY(-5px);
-        }
-
-        .contact-form {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            overflow-y: auto;
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 0;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            animation: modalFadeIn 0.3s ease;
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .close-modal {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 20px;
-        }
-
-        .close-modal:hover {
-            color: var(--primary);
-        }
-
-        .modal-header {
-            padding: 20px 30px;
-            border-bottom: 1px solid #eaeaea;
-        }
-
-        .modal-header h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        .modal-body {
-            padding: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .checkbox-group input {
-            width: auto;
-        }
-
-        /* Success Message */
-        .success-message {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 3000;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-        }
-
-        .success-icon {
-            font-size: 4rem;
-            color: #4caf50;
-            margin-bottom: 20px;
-        }
-
-        .success-message h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .success-message p {
-            color: var(--text-light);
-            margin-bottom: 25px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-content {
-                margin-bottom: 50px;
-            }
-            
-            .hero-image {
-                max-width: 100%;
-            }
-            
-            .floating-card {
-                position: relative;
-                margin: 20px;
-                top: auto;
-                left: auto;
-                right: auto;
-                bottom: auto;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .team-stats {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: white;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                padding: 20px 0;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links ul {
-                flex-direction: column;
-            }
-            
-            .nav-links ul li {
-                margin: 15px 0;
-            }
-            
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .hamburger.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            
-            .hamburger.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .team-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .search-bar {
-                max-width: 100%;
-            }
-            
-            .modal-content {
-                width: 95%;
-                margin: 10% auto;
-            }
-            
-            .modal-body {
-                padding: 20px;
-            }
-            
-            .team-stats {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .hackathon-grid,
-            .team-grid,
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-links h3::after,
-            .footer-contact h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-                width: 30px;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
-            .modal-content {
-                width: 100%;
-                border-radius: 0;
-                margin: 0;
-                height: 100%;
-            }
-            
-            .modal-header {
-                padding: 15px 20px;
-            }
-            
-            .modal-body {
-                padding: 20px;
-            }
-            
-            .team-card {
-                margin-bottom: 30px;
-            }
-            
-            .team-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .team-logo {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-            
-            .team-status {
-                justify-content: center;
-            }
-            
-            .team-members {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-            
-            .team-actions {
-                flex-direction: column;
-            }
-            
-            .team-note {
-                text-align: center;
-                justify-content: center;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-            
-            .contact-icon {
-                margin-right: 0;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container container">
-            <div class="logo">JIIT<span>Connect</span></div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#teams">Find a Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#mentorship">Mentorship</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Home Page -->
-    <div id="home" class="page active">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Innovate. Collaborate. <span>Elevate.</span></h1>
-                    <p class="hero-subtitle">Your gateway to hackathons, team collaboration, and endless opportunities at JIIT</p>
-                    <div class="hero-buttons">
-                        <a href="#hackathons" class="btn btn-primary">Explore Hackathons</a>
-                        <a href="#teams" class="btn btn-secondary">Find a Team</a>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i> Connecting Students with Opportunities
                 </div>
-                <div class="hero-image">
-                    <div class="floating-card">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Code</h3>
-                    </div>
-                    <div class="floating-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Collaborate</h3>
-                    </div>
-                    <div class="floating-card">
-                        <i class="fas fa-trophy"></i>
-                        <h3>Compete</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hackathons Section -->
-        <section id="hackathons" class="hackathons">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Upcoming <span>Hackathons</span></h2>
-                    <p class="section-subtitle">Join exciting competitions and showcase your skills</p>
+                <h1 class="hero-title">Unlock Your Potential with JIITCONNECT</h1>
+                <p class="hero-description">Discover hackathons, build teams, and connect with mentors from top tech companies to accelerate your career.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#events" class="btn">Explore Events</a>
+                    <a href="#mentorship" class="btn btn-outline">Find Mentors</a>
                 </div>
                 
-                <div class="hackathon-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="upcoming">Upcoming</button>
-                    <button class="filter-btn" data-filter="popular">Popular</button>
-                </div>
-                
-                <div class="hackathon-grid">
-                    <!-- Hackathon Card 1 -->
-                    <div class="hackathon-card" data-category="upcoming">
-                        <div class="hackathon-image">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hackathon">
-                            <div class="hackathon-date">
-                                <span class="day">15</span>
-                                <span class="month">OCT</span>
-                            </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-code"></i>
                         </div>
-                        <div class="hackathon-content">
-                            <h3>CodeFest 2023</h3>
-                            <p>24-hour coding marathon with exciting prizes and networking opportunities.</p>
-                            <div class="hackathon-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> JIIT Campus</span>
-                                <span><i class="fas fa-users"></i> 200+ Participants</span>
-                            </div>
-                            <button class="btn btn-primary register-btn" data-hackathon="codefest">Register Now</button>
-                        </div>
+                        <h3 class="feature-title">Hackathons</h3>
+                        <p class="feature-description">Join exciting competitions</p>
                     </div>
                     
-                    <!-- Hackathon Card 2 -->
-                    <div class="hackathon-card" data-category="popular">
-                        <div class="hackathon-image">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hackathon">
-                            <div class="hackathon-date">
-                                <span class="day">05</span>
-                                <span class="month">NOV</span>
-                            </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <div class="hackathon-content">
-                            <h3>InnovateX</h3>
-                            <p>Showcase your innovative ideas and compete with the best minds in the region.</p>
-                            <div class="hackathon-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Online</span>
-                                <span><i class="fas fa-users"></i> 500+ Participants</span>
-                            </div>
-                            <button class="btn btn-primary register-btn" data-hackathon="innovatex">Register Now</button>
-                        </div>
+                        <h3 class="feature-title">Build Teams</h3>
+                        <p class="feature-description">Collaborate with peers</p>
                     </div>
                     
-                    <!-- Hackathon Card 3 -->
-                    <div class="hackathon-card" data-category="upcoming">
-                        <div class="hackathon-image">
-                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hackathon">
-                            <div class="hackathon-date">
-                                <span class="day">20</span>
-                                <span class="month">NOV</span>
-                            </div>
-                        </div>
-                        <div class="hackathon-content">
-                            <h3>AI Challenge</h3>
-                            <p>Build AI-powered solutions to real-world problems and win amazing prizes.</p>
-                            <div class="hackathon-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> JIIT Campus</span>
-                                <span><i class="fas fa-users"></i> 150+ Participants</span>
-                            </div>
-                            <button class="btn btn-primary register-btn" data-hackathon="aichallenge">Register Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Button Section -->
-        <section class="team-button-section">
-            <div class="container team-button-container">
-                <h2 class="team-button-title">Looking for a <span>Team</span>?</h2>
-                <p class="team-button-subtitle">Join existing teams or create your own to collaborate on exciting projects</p>
-                <a href="#teams" class="team-button">Find a Team</a>
-            </div>
-        </section>
-
-        <!-- Coming Soon Section -->
-        <section id="coming-soon" class="coming-soon">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Coming <span>Soon</span></h2>
-                    <p class="section-subtitle">Exciting new features to enhance your JIITConnect experience</p>
-                </div>
-                
-                <div class="features-grid">
-                    <!-- Feature 1 -->
-                    <div class="feature-card">
+                    <div class="feature">
                         <div class="feature-icon">
                             <i class="fas fa-user-tie"></i>
                         </div>
-                        <h3>Mentorship Program</h3>
-                        <p>Connect with industry professionals and alumni who can guide you in your career journey.</p>
-                        <div class="feature-status">
-                            <span class="status-badge">Launching Soon</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 2 -->
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h3>Internship & Job Board</h3>
-                        <p>Find exclusive internship and job opportunities curated specifically for JIIT students.</p>
-                        <div class="feature-status">
-                            <span class="status-badge">In Development</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 3 -->
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <h3>Workshops & Webinars</h3>
-                        <p>Attend skill-building workshops and webinars conducted by industry experts.</p>
-                        <div class="feature-status">
-                            <span class="status-badge">Planning Phase</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Feature 4 -->
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h3>Project Showcase</h3>
-                        <p>Display your projects and get feedback from peers and industry professionals.</p>
-                        <div class="feature-status">
-                            <span class="status-badge">Coming Next</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="join-team-section">
-                    <h3>Join Our Team</h3>
-                    <p>Be part of the team that's building the future of student collaboration at JIIT</p>
-                    <button class="btn btn-primary" id="join-our-team-btn">Apply Now</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-logo">
-                        <h2>JIIT<span>Connect</span></h2>
-                        <p>Connecting innovators, creators, and leaders of tomorrow.</p>
-                    </div>
-                    <div class="footer-links">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#hackathons">Hackathons</a></li>
-                            <li><a href="#teams">Find a Team</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-contact">
-                        <h3>Contact Us</h3>
-                        <p><i class="fas fa-envelope"></i> contact@jiitconnect.in</p>
-                        <p><i class="fas fa-map-marker-alt"></i> JIIT, Sector 62, Noida</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2023 JIITConnect. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Team Page -->
-    <div id="teams" class="page team-page">
-        <div class="container">
-            <div class="team-page-header">
-                <h2 class="team-page-title">Find a <span>Team</span></h2>
-                <p class="team-page-subtitle">Join existing teams or create your own to collaborate on projects</p>
-            </div>
-            
-            <div class="team-actions">
-                <button class="btn btn-primary" id="create-team-btn">Create New Team</button>
-                <div class="search-bar">
-                    <input type="text" placeholder="Search teams by skills or project...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-            
-            <div class="team-filters">
-                <button class="team-filter-btn active" data-filter="all">All Teams</button>
-                <button class="team-filter-btn" data-filter="web">Web Dev</button>
-                <button class="team-filter-btn" data-filter="mobile">Mobile</button>
-                <button class="team-filter-btn" data-filter="ai">AI/ML</button>
-                <button class="team-filter-btn" data-filter="design">Design</button>
-            </div>
-            
-            <div class="team-grid">
-                <!-- Team Card 1 -->
-                <div class="team-card" data-category="web">
-                    <div class="team-header">
-                        <div class="team-logo">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="team-info">
-                            <h3>CodeCrafters</h3>
-                            <p>Web Development Project</p>
-                            <div class="team-status">
-                                <span class="status active">Active</span>
-                                <span class="difficulty">Intermediate</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-progress">
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 65%;"></div>
-                        </div>
-                        <span class="progress-text">65% Complete</span>
-                    </div>
-                    
-                    <div class="team-details">
-                        <div class="team-description">
-                            <p>Building a modern e-commerce platform with React and Node.js. Looking for a frontend developer with React experience.</p>
-                        </div>
-                        
-                        <div class="team-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">E-commerce</span>
-                        </div>
-                        
-                        <div class="team-members">
-                            <div class="member-count">
-                                <i class="fas fa-users"></i> 3/4 members
-                            </div>
-                            <div class="member-avatars">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Member">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Member">
-                                <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Member">
-                                <div class="add-member">+</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-actions">
-                        <button class="btn btn-primary join-team-btn" data-form-url="https://forms.gle/xyz123">Join Team</button>
-                        <button class="btn btn-secondary view-details-btn">View Details</button>
-                    </div>
-                    
-                    <div class="team-note">
-                        <p><i class="fas fa-info-circle"></i> Clicking "Join Team" will redirect you to a Google Form to apply</p>
-                    </div>
-                </div>
-                
-                <!-- Team Card 2 -->
-                <div class="team-card" data-category="mobile">
-                    <div class="team-header">
-                        <div class="team-logo">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <div class="team-info">
-                            <h3>AppMasters</h3>
-                            <p>Mobile App Development</p>
-                            <div class="team-status">
-                                <span class="status recruiting">Recruiting</span>
-                                <span class="difficulty">Beginner</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-progress">
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 40%;"></div>
-                        </div>
-                        <span class="progress-text">40% Complete</span>
-                    </div>
-                    
-                    <div class="team-details">
-                        <div class="team-description">
-                            <p>Creating a fitness tracking app with Flutter. Open to all skill levels, especially UI/UX designers and backend developers.</p>
-                        </div>
-                        
-                        <div class="team-tags">
-                            <span class="tag">Flutter</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">Health</span>
-                        </div>
-                        
-                        <div class="team-members">
-                            <div class="member-count">
-                                <i class="fas fa-users"></i> 2/4 members
-                            </div>
-                            <div class="member-avatars">
-                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Member">
-                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Member">
-                                <div class="add-member">+</div>
-                                <div class="add-member">+</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-actions">
-                        <button class="btn btn-primary join-team-btn" data-form-url="https://forms.gle/abc456">Join Team</button>
-                        <button class="btn btn-secondary view-details-btn">View Details</button>
-                    </div>
-                    
-                    <div class="team-note">
-                        <p><i class="fas fa-info-circle"></i> Clicking "Join Team" will redirect you to a Google Form to apply</p>
-                    </div>
-                </div>
-                
-                <!-- Team Card 3 -->
-                <div class="team-card" data-category="ai">
-                    <div class="team-header">
-                        <div class="team-logo">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="team-info">
-                            <h3>AI Innovators</h3>
-                            <p>Machine Learning Project</p>
-                            <div class="team-status">
-                                <span class="status full">Full</span>
-                                <span class="difficulty">Advanced</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-progress">
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 85%;"></div>
-                        </div>
-                        <span class="progress-text">85% Complete</span>
-                    </div>
-                    
-                    <div class="team-details">
-                        <div class="team-description">
-                            <p>Developing an AI-powered image recognition system for medical diagnostics. Currently full, but accepting applications for future projects.</p>
-                        </div>
-                        
-                        <div class="team-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">TensorFlow</span>
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">Healthcare</span>
-                        </div>
-                        
-                        <div class="team-members">
-                            <div class="member-count">
-                                <i class="fas fa-users"></i> 4/4 members
-                            </div>
-                            <div class="member-avatars">
-                                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Member">
-                                <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="Member">
-                                <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Member">
-                                <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Member">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-actions">
-                        <button class="btn btn-secondary disabled">Team Full</button>
-                        <button class="btn btn-secondary view-details-btn">View Details</button>
-                    </div>
-                    
-                    <div class="team-note">
-                        <p><i class="fas fa-info-circle"></i> This team is currently full but you can still view details</p>
-                    </div>
-                </div>
-                
-                <!-- Team Card 4 -->
-                <div class="team-card" data-category="design">
-                    <div class="team-header">
-                        <div class="team-logo">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <div class="team-info">
-                            <h3>Design Wizards</h3>
-                            <p>UI/UX Design Project</p>
-                            <div class="team-status">
-                                <span class="status recruiting">Recruiting</span>
-                                <span class="difficulty">Intermediate</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-progress">
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 30%;"></div>
-                        </div>
-                        <span class="progress-text">30% Complete</span>
-                    </div>
-                    
-                    <div class="team-details">
-                        <div class="team-description">
-                            <p>Redesigning the college campus app with focus on accessibility and user experience. Looking for creative designers with Figma experience.</p>
-                        </div>
-                        
-                        <div class="team-tags">
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">Figma</span>
-                            <span class="tag">Prototyping</span>
-                            <span class="tag">Accessibility</span>
-                        </div>
-                        
-                        <div class="team-members">
-                            <div class="member-count">
-                                <i class="fas fa-users"></i> 2/3 members
-                            </div>
-                            <div class="member-avatars">
-                                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Member">
-                                <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Member">
-                                <div class="add-member">+</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-actions">
-                        <button class="btn btn-primary join-team-btn" data-form-url="https://forms.gle/def789">Join Team</button>
-                        <button class="btn btn-secondary view-details-btn">View Details</button>
-                    </div>
-                    
-                    <div class="team-note">
-                        <p><i class="fas fa-info-circle"></i> Clicking "Join Team" will redirect you to a Google Form to apply</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="team-stats">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>24</h3>
-                        <p>Active Teams</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>87</h3>
-                        <p>Students Joined</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>12</h3>
-                        <p>Projects Completed</p>
+                        <h3 class="feature-title">Get Mentored</h3>
+                        <p class="feature-description">Learn from industry experts</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Contact Page -->
-    <div id="contact" class="page contact-page">
+    <!-- Events Section -->
+    <section class="events" id="events">
         <div class="container">
-            <div class="contact-page-header">
-                <h2 class="contact-page-title">Contact <span>Us</span></h2>
-                <p class="contact-page-subtitle">Get in touch with our team for any questions or feedback</p>
+            <div class="section-title">
+                <h2>Upcoming Hackathons & Events</h2>
+                <p>Discover exciting opportunities to showcase your skills and collaborate with peers</p>
             </div>
             
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+            <div class="events-grid">
+                <!-- SIH Event -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <div class="event-date">Oct 15-17, 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Smart India Hackathon</h3>
+                        <p class="event-description">Join India's biggest hackathon to solve real-world problems and win exciting prizes.</p>
+                        <div class="event-footer">
+                            <span class="event-tag">National Level</span>
+                            <button class="btn btn-small" onclick="showComingSoonModal()">Coming Soon</button>
                         </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>JIIT, Sector 62, Noida, Uttar Pradesh 201309</p>
+                    </div>
+                </div>
+                
+                <!-- TechFest Event -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <div class="event-date">Nov 5-7, 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">JIIT TechFest</h3>
+                        <p class="event-description">Annual technical festival featuring competitions, workshops, and tech talks.</p>
+                        <div class="event-footer">
+                            <span class="event-tag">College Level</span>
+                            <a href="https://forms.gle/example" target="_blank" class="btn btn-small">Find a Team</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CodeCrush Event -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <div class="event-date">Dec 10-12, 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">CodeCrush</h3>
+                        <p class="event-description">24-hour coding marathon to build innovative solutions and network with developers.</p>
+                        <div class="event-footer">
+                            <span class="event-tag">Inter-College</span>
+                            <a href="https://forms.gle/example" target="_blank" class="btn btn-small">Find a Team</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Innovation Challenge -->
+                <div class="event-card">
+                    <div class="event-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                        <div class="event-date">Jan 15-17, 2024</div>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Innovation Challenge</h3>
+                        <p class="event-description">Showcase your innovative ideas and compete for funding and mentorship opportunities.</p>
+                        <div class="event-footer">
+                            <span class="event-tag">University Level</span>
+                            <a href="https://forms.gle/example" target="_blank" class="btn btn-small">Find a Team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentorship Section -->
+    <section class="mentorship" id="mentorship">
+        <div class="container">
+            <div class="mentorship-content">
+                <div class="mentorship-header">
+                    <h2>Exclusive Mentorship Program</h2>
+                    <p>Connect with successful alumni from top tech companies and accelerate your career growth</p>
+                </div>
+                
+                <div class="mentorship-process">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <h3 class="step-title">Discover</h3>
+                            <p class="step-description">Browse mentors from top companies</p>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-handshake"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p>contact@jiitconnect.in</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <p>+91 98765 43210</p>
+                        <div>
+                            <h3 class="step-title">Connect</h3>
+                            <p class="step-description">Request mentorship sessions</p>
                         </div>
                     </div>
                     
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3 class="step-title">Learn</h3>
+                            <p class="step-description">Gain insights and guidance</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h3 class="step-title">Grow</h3>
+                            <p class="step-description">Accelerate your career</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mentors-showcase">
+                    <div class="mentor-card">
+                        <div class="mentor-header">
+                            <div class="mentor-logo">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Google Mentors</h3>
+                                <p>12+ Industry Experts</p>
+                            </div>
+                        </div>
+                        <div class="mentor-details">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Software Engineers</li>
+                                <li><i class="fas fa-check-circle"></i> Product Managers</li>
+                                <li><i class="fas fa-check-circle"></i> UX Designers</li>
+                                <li><i class="fas fa-check-circle"></i> Data Scientists</li>
+                            </ul>
+                        </div>
+                        <div class="mentor-status">
+                            <i class="fas fa-clock"></i> Coming Soon
+                        </div>
+                    </div>
+                    
+                    <div class="mentor-card">
+                        <div class="mentor-header">
+                            <div class="mentor-logo">
+                                <i class="fab fa-meta"></i>
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Meta Mentors</h3>
+                                <p>8+ Industry Experts</p>
+                            </div>
+                        </div>
+                        <div class="mentor-details">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> AR/VR Developers</li>
+                                <li><i class="fas fa-check-circle"></i> Data Scientists</li>
+                                <li><i class="fas fa-check-circle"></i> Research Scientists</li>
+                                <li><i class="fas fa-check-circle"></i> Product Designers</li>
+                            </ul>
+                        </div>
+                        <div class="mentor-status">
+                            <i class="fas fa-clock"></i> Coming Soon
+                        </div>
+                    </div>
+                    
+                    <div class="mentor-card">
+                        <div class="mentor-header">
+                            <div class="mentor-logo">
+                                <i class="fab fa-amazon"></i>
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Amazon Mentors</h3>
+                                <p>10+ Industry Experts</p>
+                            </div>
+                        </div>
+                        <div class="mentor-details">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Cloud Architects</li>
+                                <li><i class="fas fa-check-circle"></i> SDEs</li>
+                                <li><i class="fas fa-check-circle"></i> DevOps Engineers</li>
+                                <li><i class="fas fa-check-circle"></i> Product Managers</li>
+                            </ul>
+                        </div>
+                        <div class="mentor-status">
+                            <i class="fas fa-clock"></i> Coming Soon
+                        </div>
+                    </div>
+                    
+                    <div class="mentor-card">
+                        <div class="mentor-header">
+                            <div class="mentor-logo">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <div class="mentor-info">
+                                <h3>Microsoft Mentors</h3>
+                                <p>9+ Industry Experts</p>
+                            </div>
+                        </div>
+                        <div class="mentor-details">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> AI Researchers</li>
+                                <li><i class="fas fa-check-circle"></i> Program Managers</li>
+                                <li><i class="fas fa-check-circle"></i> Cloud Engineers</li>
+                                <li><i class="fas fa-check-circle"></i> Security Experts</li>
+                            </ul>
+                        </div>
+                        <div class="mentor-status">
+                            <i class="fas fa-clock"></i> Coming Soon
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="notify-section">
+                    <h3>Be the First to Know</h3>
+                    <p>Get notified when the mentorship program launches</p>
+                    <form class="notify-form">
+                        <input type="email" placeholder="Enter your email address">
+                        <button type="submit">Notify Me</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>JIITCONNECT</h3>
+                    <p>Connecting students with opportunities, events, and mentorship since 2023.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2300,631 +325,55 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="contact-name">Your Name</label>
-                            <input type="text" id="contact-name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-email">Your Email</label>
-                            <input type="email" id="contact-email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-subject">Subject</label>
-                            <input type="text" id="contact-subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-message">Message</label>
-                            <textarea id="contact-message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hackathon Registration Modal -->
-    <div class="modal" id="hackathon-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2 id="modal-title">Hackathon Registration</h2>
-            </div>
-            <div class="modal-body">
-                <div class="hackathon-details">
-                    <img id="modal-image" src="" alt="Hackathon">
-                    <div class="details-content">
-                        <h3 id="modal-hackathon-name">Hackathon Name</h3>
-                        <p id="modal-description">Hackathon description goes here.</p>
-                        <div class="details-meta">
-                            <div class="meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span id="modal-date">Date</span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span id="modal-venue">Venue</span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span id="modal-duration">Duration</span>
-                            </div>
-                        </div>
-                        <div class="prizes">
-                            <h4>Prizes</h4>
-                            <ul id="modal-prizes">
-                                <li>1st Prize: ₹50,000</li>
-                                <li>2nd Prize: ₹30,000</li>
-                                <li>3rd Prize: ₹20,000</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#mentorship">Mentorship</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
                 
-                <form class="registration-form" id="registration-form">
-                    <h3>Register for the Hackathon</h3>
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="student-id">Student ID</label>
-                        <input type="text" id="student-id" name="student-id" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="branch">Branch</label>
-                        <select id="branch" name="branch" required>
-                            <option value="">Select Branch</option>
-                            <option value="cse">Computer Science Engineering</option>
-                            <option value="it">Information Technology</option>
-                            <option value="ece">Electronics & Communication Engineering</option>
-                            <option value="ee">Electrical Engineering</option>
-                            <option value="me">Mechanical Engineering</option>
-                            <option value="ce">Civil Engineering</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="year">Year of Study</label>
-                        <select id="year" name="year" required>
-                            <option value="">Select Year</option>
-                            <option value="1">1st Year</option>
-                            <option value="2">2nd Year</option>
-                            <option value="3">3rd Year</option>
-                            <option value="4">4th Year</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="team">Team Preference</label>
-                        <select id="team" name="team" required>
-                            <option value="">Select Preference</option>
-                            <option value="individual">Individual (Will be assigned a team)</option>
-                            <option value="team">Already have a team</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="skills">Skills (comma separated)</label>
-                        <input type="text" id="skills" name="skills" placeholder="e.g., JavaScript, Python, UI/UX">
-                    </div>
-                    <div class="form-group">
-                        <label for="experience">Previous Hackathon Experience</label>
-                        <textarea id="experience" name="experience" rows="3"></textarea>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">I agree to the terms and conditions</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit Registration</button>
-                </form>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> JIIT, Noida, India</li>
+                        <li><i class="fas fa-envelope"></i> contact@jiitconnect.com</li>
+                        <li><i class="fas fa-phone"></i> +91 12345 67890</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 JIITCONNECT. All rights reserved.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Create Team Modal -->
-    <div class="modal" id="create-team-modal">
+    <!-- Coming Soon Modal -->
+    <div class="modal" id="comingSoonModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Create a New Team</h2>
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-clock"></i>
             </div>
-            <div class="modal-body">
-                <form class="create-team-form" id="create-team-form">
-                    <div class="form-group">
-                        <label for="team-name">Team Name</label>
-                        <input type="text" id="team-name" name="team-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="team-description">Team Description</label>
-                        <textarea id="team-description" name="team-description" rows="3" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="project-type">Project Type</label>
-                        <select id="project-type" name="project-type" required>
-                            <option value="">Select Project Type</option>
-                            <option value="web">Web Development</option>
-                            <option value="mobile">Mobile App Development</option>
-                            <option value="ai">AI/Machine Learning</option>
-                            <option value="blockchain">Blockchain</option>
-                            <option value="iot">IoT</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="team-size">Team Size</label>
-                        <select id="team-size" name="team-size" required>
-                            <option value="">Select Team Size</option>
-                            <option value="2">2 Members</option>
-                            <option value="3">3 Members</option>
-                            <option value="4">4 Members</option>
-                            <option value="5">5 Members</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="required-skills">Required Skills (comma separated)</label>
-                        <input type="text" id="required-skills" name="required-skills" placeholder="e.g., JavaScript, Python, UI/UX">
-                    </div>
-                    <div class="form-group">
-                        <label for="team-goal">Team Goal</label>
-                        <textarea id="team-goal" name="team-goal" rows="3" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create Team</button>
-                </form>
-            </div>
+            <h3>Coming Soon!</h3>
+            <p>This event registration will open soon. Stay tuned for updates and announcements.</p>
+            <button class="btn" onclick="closeModal()">Got it</button>
         </div>
     </div>
 
-    <!-- Join Our Team Modal -->
-    <div class="modal" id="join-our-team-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Join Our Team</h2>
-            </div>
-            <div class="modal-body">
-                <p>We're looking for passionate individuals to help us build and grow JIITConnect. If you're interested in web development, design, marketing, or operations, we'd love to hear from you!</p>
-                
-                <form class="join-our-team-form" id="join-our-team-form">
-                    <div class="form-group">
-                        <label for="applicant-name">Full Name</label>
-                        <input type="text" id="applicant-name" name="applicant-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-email">Email Address</label>
-                        <input type="email" id="applicant-email" name="applicant-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-phone">Phone Number</label>
-                        <input type="tel" id="applicant-phone" name="applicant-phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-student-id">Student ID</label>
-                        <input type="text" id="applicant-student-id" name="applicant-student-id" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-branch">Branch</label>
-                        <select id="applicant-branch" name="applicant-branch" required>
-                            <option value="">Select Branch</option>
-                            <option value="cse">Computer Science Engineering</option>
-                            <option value="it">Information Technology</option>
-                            <option value="ece">Electronics & Communication Engineering</option>
-                            <option value="ee">Electrical Engineering</option>
-                            <option value="me">Mechanical Engineering</option>
-                            <option value="ce">Civil Engineering</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-year">Year of Study</label>
-                        <select id="applicant-year" name="applicant-year" required>
-                            <option value="">Select Year</option>
-                            <option value="1">1st Year</option>
-                            <option value="2">2nd Year</option>
-                            <option value="3">3rd Year</option>
-                            <option value="4">4th Year</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="position">Position of Interest</label>
-                        <select id="position" name="position" required>
-                            <option value="">Select Position</option>
-                            <option value="web-dev">Web Development</option>
-                            <option value="ui-ux">UI/UX Design</option>
-                            <option value="marketing">Marketing</option>
-                            <option value="content">Content Creation</option>
-                            <option value="operations">Operations</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-skills">Relevant Skills</label>
-                        <input type="text" id="applicant-skills" name="applicant-skills" placeholder="e.g., JavaScript, Photoshop, Content Writing">
-                    </div>
-                    <div class="form-group">
-                        <label for="motivation">Why do you want to join our team?</label>
-                        <textarea id="motivation" name="motivation" rows="4" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="applicant-experience">Previous Experience (if any)</label>
-                        <textarea id="applicant-experience" name="applicant-experience" rows="3"></textarea>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="team-terms" name="team-terms" required>
-                        <label for="team-terms">I agree to the terms and conditions</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit Application</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Page Navigation
-            const pages = document.querySelectorAll('.page');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            function showPage(pageId) {
-                pages.forEach(page => {
-                    page.classList.remove('active');
-                });
-                
-                document.getElementById(pageId).classList.add('active');
-                
-                // Update active nav link
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${pageId}`) {
-                        link.classList.add('active');
-                    }
-                });
-                
-                // Scroll to top
-                window.scrollTo(0, 0);
-            }
-            
-            // Navigation link clicks
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const pageId = this.getAttribute('href').substring(1);
-                    showPage(pageId);
-                });
-            });
-            
-            // Mobile Navigation Toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-links');
-            
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-            
-            // Hackathon Filter
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const hackathonCards = document.querySelectorAll('.hackathon-card');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Update active button
-                    filterBtns.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Filter hackathon cards
-                    const filter = this.getAttribute('data-filter');
-                    
-                    hackathonCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Team Filter
-            const teamFilterBtns = document.querySelectorAll('.team-filter-btn');
-            const teamCards = document.querySelectorAll('.team-card');
-            
-            teamFilterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Update active button
-                    teamFilterBtns.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Filter team cards
-                    const filter = this.getAttribute('data-filter');
-                    
-                    teamCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Modal functionality
-            const modals = document.querySelectorAll('.modal');
-            const closeBtns = document.querySelectorAll('.close-modal');
-            
-            // Hackathon Registration Modal
-            const registerBtns = document.querySelectorAll('.register-btn');
-            const hackathonModal = document.getElementById('hackathon-modal');
-            
-            registerBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const hackathonId = this.getAttribute('data-hackathon');
-                    
-                    // Set modal content based on hackathon
-                    if (hackathonId === 'codefest') {
-                        document.getElementById('modal-title').textContent = 'CodeFest 2023 Registration';
-                        document.getElementById('modal-hackathon-name').textContent = 'CodeFest 2023';
-                        document.getElementById('modal-description').textContent = 'Join us for a 24-hour coding marathon where you can showcase your skills, collaborate with peers, and win exciting prizes. This hackathon is open to all students with a passion for coding and innovation.';
-                        document.getElementById('modal-date').textContent = 'October 15, 2023';
-                        document.getElementById('modal-venue').textContent = 'JIIT Campus, Sector 62, Noida';
-                        document.getElementById('modal-duration').textContent = '24 Hours';
-                        document.getElementById('modal-image').src = 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
-                    } else if (hackathonId === 'innovatex') {
-                        document.getElementById('modal-title').textContent = 'InnovateX Registration';
-                        document.getElementById('modal-hackathon-name').textContent = 'InnovateX';
-                        document.getElementById('modal-description').textContent = 'InnovateX is a platform for creative minds to showcase their innovative ideas and compete with the best minds in the region. This online hackathon focuses on solving real-world problems through technology.';
-                        document.getElementById('modal-date').textContent = 'November 5, 2023';
-                        document.getElementById('modal-venue').textContent = 'Online Event';
-                        document.getElementById('modal-duration').textContent = '48 Hours';
-                        document.getElementById('modal-image').src = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
-                    } else if (hackathonId === 'aichallenge') {
-                        document.getElementById('modal-title').textContent = 'AI Challenge Registration';
-                        document.getElementById('modal-hackathon-name').textContent = 'AI Challenge';
-                        document.getElementById('modal-description').textContent = 'Build AI-powered solutions to real-world problems in this exciting hackathon. Whether you\'re a beginner or an expert in AI, this event is perfect for you to learn, build, and innovate.';
-                        document.getElementById('modal-date').textContent = 'November 20, 2023';
-                        document.getElementById('modal-venue').textContent = 'JIIT Campus, Sector 62, Noida';
-                        document.getElementById('modal-duration').textContent = '36 Hours';
-                        document.getElementById('modal-image').src = 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';
-                    }
-                    
-                    // Open modal
-                    hackathonModal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            
-            // Create Team Modal
-            const createTeamBtn = document.getElementById('create-team-btn');
-            const createTeamModal = document.getElementById('create-team-modal');
-            
-            createTeamBtn.addEventListener('click', function() {
-                createTeamModal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            });
-            
-            // Join Our Team Modal
-            const joinOurTeamBtn = document.getElementById('join-our-team-btn');
-            const joinOurTeamModal = document.getElementById('join-our-team-modal');
-            
-            joinOurTeamBtn.addEventListener('click', function() {
-                joinOurTeamModal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            });
-            
-            // Close modals
-            closeBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    modals.forEach(modal => {
-                        modal.style.display = 'none';
-                    });
-                    document.body.style.overflow = 'auto';
-                });
-            });
-            
-            // Close modal when clicking outside
-            window.addEventListener('click', function(event) {
-                modals.forEach(modal => {
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            });
-            
-            // Join Team Button - Open Google Form
-            const joinTeamBtns = document.querySelectorAll('.join-team-btn');
-            
-            joinTeamBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const formUrl = this.getAttribute('data-form-url');
-                    if (formUrl) {
-                        window.open(formUrl, '_blank');
-                    }
-                });
-            });
-            
-            // Form submissions
-            const registrationForm = document.getElementById('registration-form');
-            const createTeamForm = document.getElementById('create-team-form');
-            const joinOurTeamForm = document.getElementById('join-our-team-form');
-            const contactForm = document.getElementById('contact-form');
-            
-            registrationForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Create success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Registration Successful!</h3>
-                    <p>Thank you for registering for the hackathon. We've sent a confirmation email with further details.</p>
-                    <button class="btn btn-primary close-success">Close</button>
-                `;
-                
-                // Clear form
-                registrationForm.reset();
-                
-                // Hide modal body and show success message
-                const modalBody = document.querySelector('#hackathon-modal .modal-body');
-                modalBody.innerHTML = '';
-                modalBody.appendChild(successMessage);
-                
-                // Close button for success message
-                document.querySelector('.close-success').addEventListener('click', function() {
-                    hackathonModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    location.reload(); // Reload to restore original modal content
-                });
-            });
-            
-            createTeamForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Create success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Team Created Successfully!</h3>
-                    <p>Your team has been created and is now visible in the "Find a Team" section. Start inviting members to join your team!</p>
-                    <button class="btn btn-primary close-success">Close</button>
-                `;
-                
-                // Clear form
-                createTeamForm.reset();
-                
-                // Hide modal body and show success message
-                const modalBody = document.querySelector('#create-team-modal .modal-body');
-                modalBody.innerHTML = '';
-                modalBody.appendChild(successMessage);
-                
-                // Close button for success message
-                document.querySelector('.close-success').addEventListener('click', function() {
-                    createTeamModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    location.reload(); // Reload to restore original modal content
-                });
-            });
-            
-            joinOurTeamForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Create success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Application Submitted!</h3>
-                    <p>Thank you for your interest in joining our team. We'll review your application and get back to you soon.</p>
-                    <button class="btn btn-primary close-success">Close</button>
-                `;
-                
-                // Clear form
-                joinOurTeamForm.reset();
-                
-                // Hide modal body and show success message
-                const modalBody = document.querySelector('#join-our-team-modal .modal-body');
-                modalBody.innerHTML = '';
-                modalBody.appendChild(successMessage);
-                
-                // Close button for success message
-                document.querySelector('.close-success').addEventListener('click', function() {
-                    joinOurTeamModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    location.reload(); // Reload to restore original modal content
-                });
-            });
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('contact-name').value;
-                const email = document.getElementById('contact-email').value;
-                
-                // Create success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Message Sent Successfully!</h3>
-                    <p>Thank you for contacting us, ${name}. We'll get back to you soon at ${email}.</p>
-                    <button class="btn btn-primary close-success">Close</button>
-                `;
-                
-                document.body.appendChild(successMessage);
-                document.body.style.overflow = 'hidden';
-                
-                // Clear form
-                contactForm.reset();
-                
-                // Close button for success message
-                document.querySelector('.close-success').addEventListener('click', function() {
-                    successMessage.remove();
-                    document.body.style.overflow = 'auto';
-                });
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetPage = document.getElementById(targetId);
-                    
-                    if (targetPage) {
-                        showPage(targetId);
-                    }
-                });
-            });
-            
-            // Add animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe elements for animation
-            document.querySelectorAll('.hackathon-card, .team-card, .feature-card, .contact-item, .stat-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
