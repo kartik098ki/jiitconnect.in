@@ -185,11 +185,8 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
         document.getElementById('loadingSpinner').style.display = 'none';
         document.getElementById('successMessage').style.display = 'block';
         
-        // Redirect to official website after 1.5 seconds
-        setTimeout(() => {
-            window.open(websiteLink, '_blank');
-            closeRegistrationModal();
-        }, 1500);
+        // Set the website link for the "Visit Official Website" button
+        document.getElementById('visitWebsiteBtn').href = websiteLink;
         
     } catch (error) {
         console.error('Error saving data:', error);
