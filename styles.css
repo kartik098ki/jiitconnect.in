@@ -332,6 +332,16 @@ header {
     background-color: #128C7E;
     box-shadow: 0 7px 20px rgba(37, 211, 102, 0.4);
 }
+.btn-whatsapp-small {
+    background-color: var(--whatsapp);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-whatsapp-small:hover {
+    background-color: #128C7E;
+}
 .hero-features {
     display: flex;
     justify-content: center;
