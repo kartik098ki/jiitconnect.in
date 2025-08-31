@@ -761,7 +761,6 @@ footer {
     color: var(--gray);
     margin-bottom: 25px;
 }
-
 /* Registration Form Styles */
 .form-group {
     margin-bottom: 20px;
@@ -862,6 +861,183 @@ footer {
 }
 #errorMessage h3 {
     color: var(--error);
+}
+
+/* Launch Modal Styles */
+.launch-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    animation: modalFadeIn 0.5s ease;
+}
+
+.modal-header {
+    margin-bottom: 30px;
+}
+
+.modal-logo {
+    font-weight: 800;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #FF0080, #FF8C00, #40E0D0, #FF0080, #FF8C00);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientAnimation 6s ease infinite;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #ffffff, var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.modal-header p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 90px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.countdown-item span:first-child {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--secondary);
+}
+
+.countdown-item span:last-child {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #cbd5e1;
+}
+
+.launch-info {
+    margin: 25px 0;
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+.launch-info span {
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.modal-footer {
+    margin-top: 30px;
+}
+
+.small-text {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10001;
+    padding: 20px;
+    max-width: 300px;
+    animation: slideIn 0.3s ease forwards;
+    transition: opacity 0.5s ease;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.notification-icon {
+    font-size: 2rem;
+    color: var(--success);
+    margin-bottom: 10px;
+}
+
+.notification h3 {
+    margin: 0 0 10px;
+    color: var(--dark);
+}
+
+.notification p {
+    margin: 0;
+    color: var(--gray);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 /* Responsive Styles */
@@ -1014,6 +1190,36 @@ footer {
     .success-actions {
         flex-direction: column;
     }
+    
+    /* Modal responsive styles */
+    .modal-content {
+        padding: 30px 20px;
+    }
+    
+    .modal-logo {
+        font-size: 2rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .modal-header p {
+        font-size: 1rem;
+    }
+    
+    .countdown-container {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+        padding: 12px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.8rem;
+    }
 }
 @media (max-width: 480px) {
     .hero {
@@ -1122,5 +1328,27 @@ footer {
     .btn {
         padding: 14px 24px;
         font-size: 14px;
+    }
+    
+    /* Modal responsive styles */
+    .modal-content {
+        padding: 25px 15px;
+    }
+    
+    .modal-logo {
+        font-size: 1.8rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .countdown-item {
+        min-width: 70px;
+        padding: 10px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.6rem;
     }
 }
