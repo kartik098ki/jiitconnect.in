@@ -133,10 +133,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.register-btn').forEach(button => {
         button.addEventListener('click', function() {
             const event = this.dataset.event;
-            const whatsappLink = this.dataset.whatsapp;
+            const websiteLink = this.dataset.website;
             
-            // Store WhatsApp link for later redirect
-            document.getElementById('registrationModal').dataset.whatsapp = whatsappLink;
+            // Store website link for later redirect
+            document.getElementById('registrationModal').dataset.website = websiteLink;
             
             showRegistrationModal(event);
         });
@@ -156,7 +156,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
     // Get event data from modal
     const modal = document.getElementById('registrationModal');
     const eventName = modal.dataset.event;
-    const whatsappLink = modal.dataset.whatsapp;
+    const websiteLink = modal.dataset.website;
     
     // Show loading state
     document.getElementById('submitBtn').style.display = 'none';
@@ -185,9 +185,9 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
         document.getElementById('loadingSpinner').style.display = 'none';
         document.getElementById('successMessage').style.display = 'block';
         
-        // Redirect to WhatsApp community after 1.5 seconds
+        // Redirect to official website after 1.5 seconds
         setTimeout(() => {
-            window.open(whatsappLink, '_blank');
+            window.open(websiteLink, '_blank');
             closeRegistrationModal();
         }, 1500);
         
