@@ -981,14 +981,81 @@ footer {
     color: var(--secondary);
 }
 
-.modal-footer {
-    margin-top: 30px;
+/* Responsive styles for modal */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 30px 20px;
+    }
+    
+    .modal-logo {
+        font-size: 2rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .modal-header p {
+        font-size: 1rem;
+    }
+    
+    .countdown-container {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+        padding: 12px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.8rem;
+    }
 }
 
-.small-text {
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin-top: 10px;
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 25px 15px;
+        width: 95%;
+    }
+    
+    .modal-logo {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+    
+    .modal-header p {
+        font-size: 0.9rem;
+    }
+    
+    .countdown-container {
+        gap: 8px;
+        margin: 20px 0;
+    }
+    
+    .countdown-item {
+        min-width: 70px;
+        padding: 10px 8px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+    }
+    
+    .countdown-item span:last-child {
+        font-size: 0.7rem;
+    }
+    
+    .launch-info {
+        margin: 15px 0;
+        font-size: 0.9rem;
+    }
 }
 
 /* Notification styles */
