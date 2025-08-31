@@ -28,8 +28,10 @@ function createParticles() {
         particlesContainer.appendChild(particle);
     }
 }
+
 // Initialize particles when page loads
 window.addEventListener('load', createParticles);
+
 // Mobile Navigation Toggle
 document.querySelector('.mobile-toggle').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
@@ -48,13 +50,16 @@ document.querySelector('.mobile-toggle').addEventListener('click', function() {
         navLinks.style.borderRadius = '0 0 10px 10px';
     }
 });
+
 // Modal Functions
 function showComingSoonModal() {
     document.getElementById('comingSoonModal').style.display = 'flex';
 }
+
 function closeModal() {
     document.getElementById('comingSoonModal').style.display = 'none';
 }
+
 // Close modal when clicking outside
 window.onclick = function(event) {
     const comingSoonModal = document.getElementById('comingSoonModal');
@@ -67,13 +72,17 @@ window.onclick = function(event) {
         registrationModal.style.display = 'none';
     }
 }
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
@@ -82,8 +91,7 @@ const SUPABASE_URL = 'https://rafdwpdprsvvaiezmjhu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhZmR3cGRwcnN2dmFpZXptamh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYwNTI1MTgsImV4cCI6MjA3MTYyODUxOH0.1SO-faZMeRMGKeh-N_bgQHH69jRdfEewgMdA0qTOX50';
 
 // Initialize Supabase
-const { createClient } = supabase;
-supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Registration Modal Functions
 function showRegistrationModal(event) {
@@ -112,15 +120,17 @@ function closeRegistrationModal() {
 }
 
 // Add event listeners to register buttons
-document.querySelectorAll('.register-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const event = this.dataset.event;
-        const whatsappLink = this.dataset.whatsapp;
-        
-        // Store WhatsApp link for later redirect
-        document.getElementById('registrationModal').dataset.whatsapp = whatsappLink;
-        
-        showRegistrationModal(event);
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.register-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const event = this.dataset.event;
+            const whatsappLink = this.dataset.whatsapp;
+            
+            // Store WhatsApp link for later redirect
+            document.getElementById('registrationModal').dataset.whatsapp = whatsappLink;
+            
+            showRegistrationModal(event);
+        });
     });
 });
 
@@ -145,7 +155,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
     
     try {
         // Insert data into Supabase
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('registrations')
             .insert([
                 {
@@ -154,7 +164,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
                     contact_number: contactNumber,
                     campus: campus,
                     event_name: eventName,
-                    created_at: new Date()
+                    created_at: new Date().toISOString()
                 }
             ]);
             
