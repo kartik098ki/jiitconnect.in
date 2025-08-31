@@ -246,6 +246,12 @@ document.addEventListener('DOMContentLoaded', function() {
             hoursEl.textContent = hours.toString().padStart(2, '0');
             minutesEl.textContent = minutes.toString().padStart(2, '0');
             secondsEl.textContent = seconds.toString().padStart(2, '0');
+            
+            // Add a subtle animation effect when seconds change
+            secondsEl.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                secondsEl.style.transform = 'scale(1)';
+            }, 300);
         }
         
         // Initial call
