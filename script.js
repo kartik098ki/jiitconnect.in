@@ -250,30 +250,5 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Initial call
         updateCountdown();
-        
-        // Notify button functionality
-        document.getElementById('notifyBtn').addEventListener('click', function() {
-            // Create a simple notification
-            const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <div class="notification-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3>Thank You!</h3>
-                    <p>We'll notify you when we launch.</p>
-                </div>
-            `;
-            document.body.appendChild(notification);
-            
-            // Remove notification after 3 seconds
-            setTimeout(() => {
-                notification.style.opacity = '0';
-                setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 500);
-            }, 3000);
-        });
     }
 });
