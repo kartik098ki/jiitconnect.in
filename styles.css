@@ -332,16 +332,6 @@ header {
     background-color: #128C7E;
     box-shadow: 0 7px 20px rgba(37, 211, 102, 0.4);
 }
-.btn-whatsapp-small {
-    background-color: var(--whatsapp);
-    color: white;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-.btn-whatsapp-small:hover {
-    background-color: #128C7E;
-}
 .hero-features {
     display: flex;
     justify-content: center;
@@ -859,6 +849,12 @@ footer {
 #successMessage h3 {
     color: var(--success);
 }
+.success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
 .error-icon {
     font-size: 4rem;
     color: var(--error);
@@ -1013,6 +1009,10 @@ footer {
     .radio-group {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .success-actions {
+        flex-direction: column;
     }
 }
 @media (max-width: 480px) {
