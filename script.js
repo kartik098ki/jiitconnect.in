@@ -91,7 +91,8 @@ const SUPABASE_URL = 'https://rafdwpdprsvvaiezmjhu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhZmR3cGRwcnN2dmFpZXptamh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYwNTI1MTgsImV4cCI6MjA3MTYyODUxOH0.1SO-faZMeRMGKeh-N_bgQHH69jRdfEewgMdA0qTOX50';
 
 // Initialize Supabase
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const { createClient } = supabase;
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Registration Modal Functions
 function showRegistrationModal(event) {
