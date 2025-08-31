@@ -28,10 +28,8 @@ function createParticles() {
         particlesContainer.appendChild(particle);
     }
 }
-
 // Initialize particles when page loads
 window.addEventListener('load', createParticles);
-
 // Mobile Navigation Toggle
 document.querySelector('.mobile-toggle').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
@@ -50,20 +48,18 @@ document.querySelector('.mobile-toggle').addEventListener('click', function() {
         navLinks.style.borderRadius = '0 0 10px 10px';
     }
 });
-
 // Modal Functions
 function showComingSoonModal() {
     document.getElementById('comingSoonModal').style.display = 'flex';
 }
-
 function closeModal() {
     document.getElementById('comingSoonModal').style.display = 'none';
 }
-
 // Close modal when clicking outside
 window.onclick = function(event) {
     const comingSoonModal = document.getElementById('comingSoonModal');
     const registrationModal = document.getElementById('registrationModal');
+    const launchModal = document.getElementById('launchModal');
     
     if (event.target == comingSoonModal) {
         comingSoonModal.style.display = 'none';
@@ -71,8 +67,10 @@ window.onclick = function(event) {
     if (event.target == registrationModal) {
         registrationModal.style.display = 'none';
     }
+    if (event.target == launchModal) {
+        launchModal.style.display = 'none';
+    }
 }
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -85,15 +83,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
 // Supabase Configuration
 const SUPABASE_URL = 'https://rafdwpdprsvvaiezmjhu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJhZmR3cGRwcnN2dmFpZXptamh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYwNTI1MTgsImV4cCI6MjA3MTYyODUxOH0.1SO-faZMeRMGKeh-N_bgQHH69jRdfEewgMdA0qTOX50';
-
 // Initialize Supabase
 const { createClient } = supabase;
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
 // Registration Modal Functions
 function showRegistrationModal(event) {
     const modal = document.getElementById('registrationModal');
@@ -116,18 +111,15 @@ function showRegistrationModal(event) {
     document.getElementById('errorMessage').style.display = 'none';
     document.getElementById('registrationForm').style.display = 'block';
 }
-
 function closeRegistrationModal() {
     document.getElementById('registrationModal').style.display = 'none';
 }
-
 function resetForm() {
     document.getElementById('registrationForm').style.display = 'block';
     document.getElementById('errorMessage').style.display = 'none';
     document.getElementById('submitBtn').style.display = 'block';
     document.getElementById('loadingSpinner').style.display = 'none';
 }
-
 // Add event listeners to register buttons
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.register-btn').forEach(button => {
@@ -142,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 // Handle form submission
 document.getElementById('registrationForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -203,5 +194,86 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
         } else {
             errorText.textContent = 'There was an error with your registration. Please try again.';
         }
+    }
+});
+
+// Launch Modal Timer
+document.addEventListener('DOMContentLoaded', function() {
+    // Set launch date to tomorrow at 1 PM
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 1); // Tomorrow
+    launchDate.setHours(13, 0, 0, 0); // 1:00 PM
+    
+    // Format date for display
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('modalLaunchDate').textContent = launchDate.toLocaleDateString(undefined, options);
+    
+    // Elements for countdown
+    const daysEl = document.getElementById('modalDays');
+    const hoursEl = document.getElementById('modalHours');
+    const minutesEl = document.getElementById('modalMinutes');
+    const secondsEl = document.getElementById('modalSeconds');
+    const launchModal = document.getElementById('launchModal');
+    
+    // Check if current time is before launch time
+    const now = new Date();
+    if (now < launchDate) {
+        // Show the modal
+        launchModal.style.display = 'flex';
+        
+        // Update countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        function updateCountdown() {
+            const currentTime = new Date().getTime();
+            const distance = launchDate - currentTime;
+            
+            // If the countdown is over
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                launchModal.style.display = 'none';
+                return;
+            }
+            
+            // Calculate time units
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Update the DOM with leading zeros
+            daysEl.textContent = days.toString().padStart(2, '0');
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Initial call
+        updateCountdown();
+        
+        // Notify button functionality
+        document.getElementById('notifyBtn').addEventListener('click', function() {
+            // Create a simple notification
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <div class="notification-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank You!</h3>
+                    <p>We'll notify you when we launch.</p>
+                </div>
+            `;
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 3000);
+        });
     }
 });
