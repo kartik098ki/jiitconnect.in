@@ -130,6 +130,21 @@
             </div>
         </div>
     </section>
+    <!-- WhatsApp Community Section -->
+    <section class="whatsapp-community">
+        <div class="container">
+            <div class="community-content">
+                <div class="community-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h2>Join Our WhatsApp Community</h2>
+                <p>Connect with fellow students, get updates on events, and collaborate on projects.</p>
+                <a href="https://chat.whatsapp.com/CUk4ApZjdcS23pd0PkL6Gf" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Join Community
+                </a>
+            </div>
+        </div>
+    </section>
     <!-- Mentorship Section -->
     <section class="mentorship" id="mentorship">
         <div class="container">
@@ -202,6 +217,7 @@
                     <p>Connecting students with opportunities, events, and mentorship.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/jiitconnect/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://chat.whatsapp.com/CUk4ApZjdcS23pd0PkL6Gf" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -296,6 +312,15 @@
                 </div>
                 <h3>Registration Successful!</h3>
                 <p>Thank you for registering. Redirecting to WhatsApp community...</p>
+            </div>
+            
+            <div id="errorMessage" style="display: none;">
+                <div class="error-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h3>Registration Failed</h3>
+                <p id="errorText">There was an error with your registration. Please try again.</p>
+                <button class="btn" onclick="resetForm()">Try Again</button>
             </div>
         </div>
     </div>
