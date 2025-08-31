@@ -113,11 +113,19 @@ function showRegistrationModal(event) {
     // Reset form
     document.getElementById('registrationForm').reset();
     document.getElementById('successMessage').style.display = 'none';
+    document.getElementById('errorMessage').style.display = 'none';
     document.getElementById('registrationForm').style.display = 'block';
 }
 
 function closeRegistrationModal() {
     document.getElementById('registrationModal').style.display = 'none';
+}
+
+function resetForm() {
+    document.getElementById('registrationForm').style.display = 'block';
+    document.getElementById('errorMessage').style.display = 'none';
+    document.getElementById('submitBtn').style.display = 'block';
+    document.getElementById('loadingSpinner').style.display = 'none';
 }
 
 // Add event listeners to register buttons
@@ -164,8 +172,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
                     email: email,
                     contact_number: contactNumber,
                     campus: campus,
-                    event_name: eventName,
-                    created_at: new Date().toISOString()
+                    event_name: eventName
                 }
             ]);
             
@@ -178,7 +185,7 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
         document.getElementById('loadingSpinner').style.display = 'none';
         document.getElementById('successMessage').style.display = 'block';
         
-        // Redirect to WhatsApp after 1.5 seconds
+        // Redirect to WhatsApp community after 1.5 seconds
         setTimeout(() => {
             window.open(whatsappLink, '_blank');
             closeRegistrationModal();
@@ -186,10 +193,18 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
         
     } catch (error) {
         console.error('Error saving data:', error);
-        alert('There was an error with your registration. Please try again.');
         
-        // Reset form state
-        document.getElementById('submitBtn').style.display = 'block';
+        // Show error message
+        document.getElementById('registrationForm').style.display = 'none';
         document.getElementById('loadingSpinner').style.display = 'none';
+        document.getElementById('errorMessage').style.display = 'block';
+        
+        // Set error text
+        const errorText = document.getElementById('errorText');
+        if (error.message) {
+            errorText.textContent = `Error: ${error.message}`;
+        } else {
+            errorText.textContent = 'There was an error with your registration. Please try again.';
+        }
     }
 });
