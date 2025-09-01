@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectZone - JIITCONNECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.7"></script>
+    <link rel="stylesheet" href="connectzone.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    JIITCONNECT
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="connectzone.html" class="active">ConnectZone</a></li>
+                    <li><a href="index.html#mentorship">Mentorship</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ConnectZone Section -->
+    <section class="connectzone">
+        <div class="connectzone-bg">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+                <div class="shape shape-7"></div>
+                <div class="shape shape-8"></div>
+            </div>
+            <div class="animated-grid"></div>
+        </div>
+        
+        <div class="container">
+            <div class="connectzone-header">
+                <div class="section-badge">CONNECTZONE</div>
+                <h2 class="section-title">Where Innovation Meets Collaboration</h2>
+                <p class="section-subtitle">Join a community of creators, innovators, and changemakers</p>
+                <button class="register-btn" id="registerBtn">
+                    <span>Register Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <div class="connectzone-showcase">
+                <div class="showcase-card" data-feature="showcase">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Showcase Your Projects</h3>
+                    <p>Display your innovative work and get discovered by peers and industry professionals</p>
+                    <div class="card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="showcase-card" data-feature="team">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Find Your Team</h3>
+                    <p>Connect with talented individuals who share your passion and vision</p>
+                    <div class="card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="showcase-card" data-feature="collaborate">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Collaborate & Create</h3>
+                    <p>Work together on groundbreaking ideas and bring them to life</p>
+                    <div class="card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="connectzone-features-new">
+                <div class="feature-heading">
+                    <h3>Explore Our Ecosystem</h3>
+                    <p>Dive into a world of opportunities designed to accelerate your growth</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-card-bg">
+                            <div class="feature-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <h4>CodeLab</h4>
+                        <p>Access coding challenges, tutorials, and resources to level up your technical skills</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-bg">
+                            <div class="feature-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                        </div>
+                        <h4>CareerHub</h4>
+                        <p>Discover internships, job opportunities, and career guidance from industry experts</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-bg">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <h4>LearnZone</h4>
+                        <p>Expand your knowledge with workshops, courses, and learning paths tailored for you</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-bg">
+                            <div class="feature-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                        <h4>Achievements</h4>
+                        <p>Earn badges, certificates, and recognition for your skills and accomplishments</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-bg">
+                            <div class="feature-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                        </div>
+                        <h4>Connections</h4>
+                        <p>Build meaningful relationships with peers, mentors, and industry professionals</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-bg">
+                            <div class="feature-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                        </div>
+                        <h4>Innovation Lab</h4>
+                        <p>Collaborate on projects, participate in hackathons, and bring your ideas to life</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>JIITCONNECT</h3>
+                    <p>Connecting students with opportunities, events, and mentorship.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/jiitconnect/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://chat.whatsapp.com/CUk4ApZjdcS23pd0PkL6Gf" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="connectzone.html" class="active">ConnectZone</a></li>
+                        <li><a href="index.html#mentorship">Mentorship</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> JIIT,Noida</li>
+                        <li><i class="fas fa-envelope"></i> help@jiitconnect.in</li>
+                        <li><i class="fas fa-phone"></i> coming soon</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 JIITCONNECT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Launch Modal -->
+    <div class="modal" id="launchModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeLaunchModal()">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Launching Soon!</h3>
+            <p>This feature will be launching on <strong>4th September at 4 PM</strong>. Stay tuned!</p>
+            <button class="btn" onclick="closeLaunchModal()">Got it</button>
+        </div>
+    </div>
+    
+    <!-- Coming Soon Modal -->
+    <div class="modal" id="comingSoonModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeComingSoonModal()">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h3 id="comingSoonTitle">Coming Soon!</h3>
+            <p id="comingSoonDescription">This feature is under development and will be available soon. Stay tuned for updates!</p>
+            <button class="btn" onclick="closeComingSoonModal()">Got it</button>
+        </div>
+    </div>
+    
+    <script src="connectzone.js"></script>
+</body>
+</html>
